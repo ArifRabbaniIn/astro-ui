@@ -1,5 +1,19 @@
 @import 'tailwindcss';
 
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: 'light';
+  default: true;
+
+  --size-field: 0.21875rem;
+  --depth: 0;
+}
+
 @theme {
   --font-sans: system-ui, sans-serif;
 }
