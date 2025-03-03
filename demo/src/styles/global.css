@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply h-svh;
+  }
+}
