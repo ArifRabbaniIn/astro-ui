@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "PACKAGE_NAME": "*",
+    "@codemint/astro-ui": "*",
     "astro": "^5.3.1"
   }
 }

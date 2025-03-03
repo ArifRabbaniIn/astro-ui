@@ -1,26 +1,31 @@
 {
-  "name": "PACKAGE_NAME",
+  "name": "@codemint/astro-ui",
   "version": "0.0.1",
-  "description": "PACKAGE_DESCRIPTION",
+  "description": "AstroJS UI components based on DaisyUI",
   "keywords": [
     "astro",
     "astro-component",
     "withastro",
     "astro-integration",
-    "KEYWORDS"
+    "daisyui",
+    "ui-library",
+    "tailwindcss",
+    "tailwind",
+    "css",
+    "component-library"
   ],
   "author": {
-    "name": "AUTHOR_NAME",
-    "url": "AUTHOR_WEBSITE_URL"
+    "name": "Arif Rabbani",
+    "url": "https://github.com/arabbani"
   },
-  "homepage": "GITHUB_REPOSITORY_URL",
+  "homepage": "https://github.com/arabbani/astro-ui",
   "repository": {
     "type": "git",
-    "url": "git+GITHUB_REPOSITORY_URL.git",
+    "url": "git+https://github.com/arabbani/astro-ui.git",
     "directory": "package"
   },
   "bugs": {
-    "url": "GITHUB_REPOSITORY_URL/issues"
+    "url": "https://github.com/arabbani/astro-ui/issues"
   },
   "license": "MIT",
   "type": "module",
