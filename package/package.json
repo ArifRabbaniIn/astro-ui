@@ -1,0 +1,44 @@
+{
+  "name": "PACKAGE_NAME",
+  "version": "0.0.1",
+  "description": "PACKAGE_DESCRIPTION",
+  "keywords": [
+    "astro",
+    "astro-component",
+    "withastro",
+    "astro-integration",
+    "KEYWORDS"
+  ],
+  "author": {
+    "name": "AUTHOR_NAME",
+    "url": "AUTHOR_WEBSITE_URL"
+  },
+  "homepage": "GITHUB_REPOSITORY_URL",
+  "repository": {
+    "type": "git",
+    "url": "git+GITHUB_REPOSITORY_URL.git",
+    "directory": "package"
+  },
+  "bugs": {
+    "url": "GITHUB_REPOSITORY_URL/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "version-patch": "npm version patch",
+    "version-minor": "npm version minor",
+    "version-major": "npm version major",
+    "publish": "npm publish --tag=latest"
+  },
+  "peerDependencies": {
+    "astro": "^5.4.0"
+  }
+}

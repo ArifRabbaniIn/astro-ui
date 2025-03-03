@@ -1,0 +1,22 @@
+{
+  "name": "root",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+GITHUB_REPOSITORY_URL.git"
+  },
+  "workspaces": [
+    "demo",
+    "package"
+  ],
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.5.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}
