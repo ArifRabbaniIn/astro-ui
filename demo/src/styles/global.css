@@ -23,3 +23,9 @@
     @apply h-svh;
   }
 }
+
+@layer components {
+  .main-content {
+    @apply container mx-auto h-full p-5;
+  }
+}
