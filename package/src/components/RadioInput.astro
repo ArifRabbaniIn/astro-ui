@@ -21,7 +21,7 @@ type Props = Omit<HTMLAttributes<'input'>, 'type'> & {
   inputSize?: Size | undefined;
 };
 
-const { color, inputSize, class: cssClass, ...rest } = Astro.props;
+const { color, inputSize, class: cssClass, ...restProps } = Astro.props;
 
 let inputClass =
   'radio focus:outline-offset-0 focus-visible:outline-offeset-0 focus-within:outline-offeset-0';
@@ -39,4 +39,4 @@ if (inputSize) {
 }
 ---
 
-<input type="radio" class={inputClass} {...rest} />
+<input type="radio" class={inputClass} {...restProps} />
