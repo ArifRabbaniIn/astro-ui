@@ -1,0 +1,40 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Input from './Input.astro';
+
+type Props = Omit<ComponentProps<typeof Input>, 'type'>;
+---
+
+<Input type="number" step="any" {...Astro.props} />
+
+<style>
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+</style>
+
+<script>
+  const invalidNumberInputKeyCodes = [
+    'KeyE',
+    'Equal',
+    'Minus',
+    'ArrowUp',
+    'ArrowDown',
+  ];
+
+  const numberInputs = document.querySelectorAll(
+    'input[type=number]'
+  ) as unknown as HTMLInputElement[];
+
+  numberInputs.forEach(input => {
+    input.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (invalidNumberInputKeyCodes.includes(event.code)) {
+        event.preventDefault();
+      }
+    });
+  });
+</script>
