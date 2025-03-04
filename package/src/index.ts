@@ -5,6 +5,7 @@ import AccordionTrigger from './components/Accordion/AccordionTrigger.astro';
 import Input from './components/Input/Input.astro';
 import JoinedContainer from './components/JoinedItems/JoinedContainer.astro';
 import JoinedItem from './components/JoinedItems/JoinedItem.astro';
+import NoScript from './components/NoScript.astro';
 import NumberInput from './components/NumberInput.astro';
 import RadioInput from './components/RadioInput/RadioInput.astro';
 
@@ -16,6 +17,7 @@ export {
   Input,
   JoinedContainer,
   JoinedItem,
+  NoScript,
   NumberInput,
   RadioInput,
 };
