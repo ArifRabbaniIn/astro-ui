@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { Color } from '../types/color';
+import type { Size } from '../types/size';
+import { getInputColorClass, getInputSizeClass } from '../utils/input';
+
+type Props = HTMLAttributes<'input'> & {
+  color?: Color;
+  inputSize?: Size;
+  ghost?: boolean;
+};
+
+const { color, inputSize, ghost, class: cssClass, ...rest } = Astro.props;
+
+let inputClass =
+  'input validator focus:outline-none focus-visible:outline-none focus-within:outline-0';
+
+if (cssClass) {
+  inputClass += ` ${cssClass}`;
+}
+
+if (color) {
+  inputClass += ` ${getInputColorClass(color)}`;
+}
+
+if (inputSize) {
+  inputClass += ` ${getInputSizeClass(inputSize)}`;
+}
+
+if (ghost) {
+  inputClass += ` input-ghost`;
+}
+---
+
+<input class={inputClass} {...rest} />
