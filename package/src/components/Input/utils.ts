@@ -1,5 +1,5 @@
-import type { Color } from '../types/color';
-import type { Size } from '../types/size';
+import type { Color } from '../../types/color';
+import type { Size } from '../../types/size';
 
 export function getInputColorClass(color: Color) {
   const classObject: Record<Color, string> = {

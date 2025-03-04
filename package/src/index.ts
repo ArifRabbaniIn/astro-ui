@@ -1,12 +1,12 @@
-import Accordion from './components/Accordion.astro';
-import AccordionContent from './components/AccordionContent.astro';
-import AccordionItem from './components/AccordionItem.astro';
-import AccordionTrigger from './components/AccordionTrigger.astro';
-import Input from './components/Input.astro';
-import JoinedContainer from './components/JoinedContainer.astro';
-import JoinedItem from './components/JoinedItem.astro';
+import Accordion from './components/Accordion/Accordion.astro';
+import AccordionContent from './components/Accordion/AccordionContent.astro';
+import AccordionItem from './components/Accordion/AccordionItem.astro';
+import AccordionTrigger from './components/Accordion/AccordionTrigger.astro';
+import Input from './components/Input/Input.astro';
+import JoinedContainer from './components/JoinedItems/JoinedContainer.astro';
+import JoinedItem from './components/JoinedItems/JoinedItem.astro';
 import NumberInput from './components/NumberInput.astro';
-import RadioInput from './components/RadioInput.astro';
+import RadioInput from './components/RadioInput/RadioInput.astro';
 
 export {
   Accordion,
