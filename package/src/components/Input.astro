@@ -11,16 +11,16 @@ type Props = HTMLAttributes<'input'> & {
   /**
    * The color scheme of the input.
    */
-  color?: Color;
+  color?: Color | undefined;
   /**
    * The size of the input.
    */
-  inputSize?: Size;
+  inputSize?: Size | undefined;
   /**
    * Whether the input should have a ghost appearance.
    * @default false
    */
-  ghost?: boolean;
+  ghost?: boolean | undefined;
 };
 
 const { color, inputSize, ghost, class: cssClass, ...rest } = Astro.props;
