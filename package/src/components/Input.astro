@@ -23,26 +23,32 @@ type Props = HTMLAttributes<'input'> & {
   ghost?: boolean | undefined;
 };
 
-const { color, inputSize, ghost, class: cssClass, ...restProps } = Astro.props;
+const {
+  color,
+  inputSize,
+  ghost,
+  class: providedClass,
+  ...restProps
+} = Astro.props;
 
-let inputClass =
+let cssClass =
   'input validator focus:outline-none focus-visible:outline-none focus-within:outline-0';
 
-if (cssClass) {
-  inputClass += ` ${cssClass}`;
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 
 if (color) {
-  inputClass += ` ${getInputColorClass(color)}`;
+  cssClass += ` ${getInputColorClass(color)}`;
 }
 
 if (inputSize) {
-  inputClass += ` ${getInputSizeClass(inputSize)}`;
+  cssClass += ` ${getInputSizeClass(inputSize)}`;
 }
 
 if (ghost) {
-  inputClass += ` input-ghost`;
+  cssClass += ` input-ghost`;
 }
 ---
 
-<input class={inputClass} {...restProps} />
+<input class={cssClass} {...restProps} />
