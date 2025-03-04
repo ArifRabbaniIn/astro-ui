@@ -4,9 +4,22 @@ import type { Color } from '../types/color';
 import type { Size } from '../types/size';
 import { getInputColorClass, getInputSizeClass } from '../utils/input';
 
+/**
+ * Props for the Input component.
+ */
 type Props = HTMLAttributes<'input'> & {
+  /**
+   * The color scheme of the input.
+   */
   color?: Color;
+  /**
+   * The size of the input.
+   */
   inputSize?: Size;
+  /**
+   * Whether the input should have a ghost appearance.
+   * @default false
+   */
   ghost?: boolean;
 };
 
