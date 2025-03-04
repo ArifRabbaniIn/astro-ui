@@ -1,14 +1,14 @@
-import Accordion from './components/Accordion/Accordion.astro';
-import AccordionContent from './components/Accordion/AccordionContent.astro';
-import AccordionItem from './components/Accordion/AccordionItem.astro';
-import AccordionTrigger from './components/Accordion/AccordionTrigger.astro';
-import Button from './components/Button/Button.astro';
-import Input from './components/Input/Input.astro';
-import JoinedContainer from './components/JoinedItems/JoinedContainer.astro';
-import JoinedItem from './components/JoinedItems/JoinedItem.astro';
-import NoScript from './components/NoScript.astro';
-import NumberInput from './components/NumberInput.astro';
-import RadioInput from './components/RadioInput/RadioInput.astro';
+import Accordion from './ui/Accordion/Accordion.astro';
+import AccordionContent from './ui/Accordion/AccordionContent.astro';
+import AccordionItem from './ui/Accordion/AccordionItem.astro';
+import AccordionTrigger from './ui/Accordion/AccordionTrigger.astro';
+import Button from './ui/Button/Button.astro';
+import Input from './ui/Input/Input.astro';
+import JoinedContainer from './ui/JoinedItems/JoinedContainer.astro';
+import JoinedItem from './ui/JoinedItems/JoinedItem.astro';
+import NoScript from './ui/NoScript.astro';
+import NumberInput from './ui/NumberInput.astro';
+import RadioInput from './ui/RadioInput/RadioInput.astro';
 
 export {
   Accordion,
