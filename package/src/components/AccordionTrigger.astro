@@ -1,0 +1,22 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+
+/**
+ * Props for the AccordionTrigger component. Allows specifying the HTML tag to render.
+ */
+type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
+  /**
+   * The HTML tag to render the trigger with.
+   * @default 'div'
+   */
+  as: Tag;
+}>;
+
+const { as: Tag = 'div', class: providedClass, ...restProps } = Astro.props;
+---
+
+<Tag
+  class={`collapse-title font-semibold ${providedClass ?? ''}`}
+  {...restProps}>
+  <slot />
+</Tag>
