@@ -1,0 +1,20 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+
+/**
+ * Props for the JoinedItem component. Allows specifying the HTML tag to render.
+ */
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  /**
+   * The HTML tag to render the content with.
+   * @default 'div'
+   */
+  as: Tag;
+}>;
+
+const { as: Tag = 'div', class: providedClass, ...restProps } = Astro.props;
+---
+
+<Tag class={`join-item ${providedClass ?? ''}`} {...restProps}>
+  <slot />
+</Tag>
