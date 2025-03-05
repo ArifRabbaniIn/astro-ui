@@ -1,5 +1,6 @@
 ---
 import type { HTMLTag, Polymorphic } from 'astro/types';
+import RadioInput from '../RadioInput/RadioInput.astro';
 
 /**
  * Available icons for the AccordionTrigger within the AccordionItem.
@@ -19,12 +20,18 @@ type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
    * The type of icon to use for the accordion trigger. Options are 'arrow' or 'plus-minus'.
    */
   triggerIcon?: CollapseIcon | undefined;
+
+  /**
+   * The name attribute for the item's radio input. Used for grouping when only one accordion item should be open at a time.
+   */
+  name: string;
 }>;
 
 const {
   as: Tag = 'div',
   triggerIcon,
   class: providedClass,
+  name,
   ...restProps
 }: Props = Astro.props;
 
@@ -44,5 +51,6 @@ if (triggerIcon) {
 ---
 
 <Tag class={cssClass} tabindex="0" {...restProps}>
+  <RadioInput {name} />
   <slot />
 </Tag>
