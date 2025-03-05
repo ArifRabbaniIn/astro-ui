@@ -24,14 +24,18 @@ import { Button } from '@codemint/astro-ui';
 
 ## Components
 
-- **Accordion:** A collapsible content component. Includes `AccordionItem`, `AccordionContent`, and `AccordionTrigger` components for building complex accordions.
-- **Button:** A standard button component.
-- **Input:** A text input component.
-- **JoinedContainer:** A container for displaying joined items.
-- **JoinedItem:** An item within a `JoinedContainer`.
-- **NoScript:** A component for displaying content only when JavaScript is disabled.
-- **NumberInput:** A numeric input component.
-- **RadioInput:** A radio button input component.
+- Accordion
+- Button
+- Checkbox
+- Collapse
+- Footer1
+- Input
+- JoinedContainer
+- JoinedItem
+- Link
+- NoScript
+- NumberInput
+- RadioInput
 
 ### Contributing
 
