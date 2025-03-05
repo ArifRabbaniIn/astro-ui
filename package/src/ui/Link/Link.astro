@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { Color } from '../../types/color';
+import { getLinkColorClass } from './utils';
+
+type Props = HTMLAttributes<'a'> & {
+  color?: Color | undefined;
+  hoverLink?: boolean | undefined;
+};
+
+const {
+  color,
+  hoverLink = false,
+  class: providedClass,
+  ...restProps
+} = Astro.props;
+
+let cssClass = 'link';
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+
+if (color) {
+  cssClass += ` ${getLinkColorClass(color)}`;
+}
+
+if (hoverLink) {
+  cssClass += ' link-hover';
+}
+---
+
+<a class={cssClass} {...restProps}>
+  <slot />
+</a>

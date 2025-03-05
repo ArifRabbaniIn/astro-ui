@@ -6,6 +6,7 @@ import Button from './ui/Button/Button.astro';
 import Input from './ui/Input/Input.astro';
 import JoinedContainer from './ui/JoinedItems/JoinedContainer.astro';
 import JoinedItem from './ui/JoinedItems/JoinedItem.astro';
+import Link from './ui/Link/Link.astro';
 import NoScript from './ui/NoScript.astro';
 import NumberInput from './ui/NumberInput.astro';
 import RadioInput from './ui/RadioInput/RadioInput.astro';
@@ -19,6 +20,7 @@ export {
   Input,
   JoinedContainer,
   JoinedItem,
+  Link,
   NoScript,
   NumberInput,
   RadioInput,
