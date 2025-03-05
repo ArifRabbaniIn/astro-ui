@@ -1,52 +1,23 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
-import type { CollapseIcon } from '../../types/collapse';
-import RadioInput from '../RadioInput/RadioInput.astro';
+import type { ComponentProps } from 'astro/types';
+import Collapse from '../Collapse/Collapse.astro';
 
-/**
- * Props for the AccordionItem component. Allows specifying the HTML tag to render.
- */
-type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
-  /**
-   * The HTML tag to render the AccordionItem with.
-   * @default 'div'
-   */
-  as: Tag;
-  /**
-   * The type of icon to use for the accordion trigger. Options are 'arrow' or 'plus-minus'.
-   */
-  triggerIcon?: CollapseIcon | undefined;
-
+type Props = Omit<ComponentProps<typeof Collapse>, 'name'> & {
   /**
    * The name attribute for the item's radio input. Used for grouping when only one accordion item should be open at a time.
    */
   name: string;
-}>;
+};
 
-const {
-  as: Tag = 'div',
-  triggerIcon,
-  class: providedClass,
-  name,
-  ...restProps
-}: Props = Astro.props;
+const { class: providedClass, ...restProps }: Props = Astro.props;
 
-let cssClass = 'collapse join-item border border-base-300';
+let cssClass = 'join-item';
 
 if (providedClass) {
   cssClass += ` ${providedClass}`;
 }
-
-if (triggerIcon) {
-  if (triggerIcon === 'arrow') {
-    cssClass += ' collapse-arrow';
-  } else if (triggerIcon === 'plus-minus') {
-    cssClass += ' collapse-plus';
-  }
-}
 ---
 
-<Tag class={cssClass} tabindex="0" {...restProps}>
-  <RadioInput {name} />
+<Collapse mode="radio" class={cssClass} {...restProps}>
   <slot />
-</Tag>
+</Collapse>
