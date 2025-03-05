@@ -16,6 +16,11 @@ import NoScript from './ui/NoScript.astro';
 import NumberInput from './ui/NumberInput.astro';
 import RadioInput from './ui/RadioInput/RadioInput.astro';
 
+export * from './types/collapse';
+export * from './types/color';
+export * from './types/link';
+export * from './types/size';
+
 export {
   Accordion,
   AccordionContent,
