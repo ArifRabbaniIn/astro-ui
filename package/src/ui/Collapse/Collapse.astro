@@ -1,6 +1,7 @@
 ---
 import type { HTMLTag, Polymorphic } from 'astro/types';
 import type { CollapseIcon } from '../../types/collapse';
+import Checkbox from '../Checkbox/Checkbox.astro';
 import RadioInput from '../RadioInput/RadioInput.astro';
 
 /**
@@ -54,7 +55,7 @@ if (triggerIcon) {
 ---
 
 <Tag class={cssClass} tabindex="0" {...restProps}>
-  {mode === 'checkbox' ? <input type="checkbox" /> : null}
+  {mode === 'checkbox' ? <Checkbox /> : null}
   {mode === 'radio' ? <RadioInput name={name} /> : null}
   <slot />
 </Tag>
