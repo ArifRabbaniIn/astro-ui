@@ -15,6 +15,7 @@ type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
   as: Tag;
   /**
    * The type of icon to use for the accordion trigger. Options are 'arrow' or 'plus-minus'.
+   * @default 'arrow'
    */
   triggerIcon?: CollapseIcon | undefined;
 
@@ -32,7 +33,7 @@ type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
 
 const {
   as: Tag = 'div',
-  triggerIcon,
+  triggerIcon = 'arrow',
   mode = 'checkbox',
   name,
   class: providedClass,
