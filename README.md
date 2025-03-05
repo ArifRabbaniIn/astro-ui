@@ -12,7 +12,7 @@ yarn add @codemint/astro-ui
 pnpm add @codemint/astro-ui
 ```
 
-Also install `daidyUI` and `tailwindcss` to your project.
+Also install `daisyUI` and `tailwindcss` to your project.
 
 ### Usage
 
