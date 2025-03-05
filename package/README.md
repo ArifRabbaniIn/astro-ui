@@ -1,6 +1,6 @@
 # Atro UI
 
-This library provides a collection of reusable Astro components for building user interfaces.
+This library provides a collection of reusable Astro components based on daisyUI for building user interfaces.
 
 ## Installation
 
@@ -11,6 +11,8 @@ yarn add @codemint/astro-ui
 # or
 pnpm add @codemint/astro-ui
 ```
+
+Also install `daidyUI` and `tailwindcss` to your project.
 
 ### Usage
 
