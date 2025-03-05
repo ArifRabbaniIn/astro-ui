@@ -1,0 +1,17 @@
+---
+import type { ComponentProps } from 'astro/types';
+import FooterAttribution from './FooterAttribution.astro';
+import FooterLinks from './FooterLinks.astro';
+
+type Props = ComponentProps<typeof FooterAttribution> &
+  ComponentProps<typeof FooterLinks>;
+---
+
+<footer
+  class="footer gap-y-6 bg-base-200 p-3 text-base-content sm:px-10 sm:py-6 md:px-20">
+  <FooterLinks links={Astro.props.links} />
+  <FooterAttribution
+    authorName={Astro.props.authorName}
+    authorWebsiteUrl={Astro.props.authorWebsiteUrl}
+  />
+</footer>

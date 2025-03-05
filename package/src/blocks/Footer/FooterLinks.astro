@@ -1,0 +1,18 @@
+---
+import Link from '../../ui/Link/Link.astro';
+import type { Link as LinkType } from './types';
+
+type Props = {
+  links: LinkType[];
+};
+---
+
+<nav class="flex w-full justify-center gap-4 flex-wrap">
+  {
+    Astro.props.links.map(link => (
+      <Link href={link.href} hoverLink>
+        {link.label}
+      </Link>
+    ))
+  }
+</nav>

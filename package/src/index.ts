@@ -1,3 +1,4 @@
+import Footer1 from './blocks/Footer/Footer1.astro';
 import Accordion from './ui/Accordion/Accordion.astro';
 import AccordionContent from './ui/Accordion/AccordionContent.astro';
 import AccordionItem from './ui/Accordion/AccordionItem.astro';
@@ -17,6 +18,7 @@ export {
   AccordionItem,
   AccordionTrigger,
   Button,
+  Footer1,
   Input,
   JoinedContainer,
   JoinedItem,
