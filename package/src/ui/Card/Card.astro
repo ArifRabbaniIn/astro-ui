@@ -1,0 +1,45 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { Color, CommonColor } from '../../types/color';
+import type { Size } from '../../types/size';
+import { getBgAndContentColorClass } from '../../utils/bgAndContentColor';
+import { getBorderColorClass } from '../../utils/borderColor';
+import type { CardBorderStyle } from './types';
+import { getCardBorderStyleClass, getCardSizeClass } from './utils';
+
+type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
+  as: Tag;
+  color?: CommonColor | undefined;
+  borderColor?: Color | undefined;
+  size?: Size | undefined;
+  borderStyle?: CardBorderStyle | undefined;
+}>;
+
+const {
+  as: Tag = 'div',
+  color,
+  borderColor,
+  size,
+  borderStyle = 'solid',
+  class: providedClass,
+  ...restProps
+}: Props = Astro.props;
+
+let cssClass = `card ${getCardBorderStyleClass(borderStyle)} ${getBorderColorClass(borderColor ?? 'base-300')}`;
+
+if (color) {
+  cssClass += ` ${getBgAndContentColorClass(color)}`;
+}
+
+if (size) {
+  cssClass += ` ${getCardSizeClass(size)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<div class={cssClass} {...restProps}>
+  <slot />
+</div>
