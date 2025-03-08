@@ -1,5 +1,5 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types';
 import type { Color, CommonColor } from '../../types/color';
 import {
   getBgAndContentColorClass,
@@ -13,13 +13,7 @@ import type { CollapseIcon } from './types';
 /**
  * Props for the Collapse component. Allows specifying the HTML tag to render.
  */
-type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
-  /**
-   * The HTML tag to render the Collapse with.
-   * @default 'div'
-   */
-  as: Tag;
-
+type Props = HTMLAttributes<'div'> & {
   /**
    * The type of icon to use for the collapse trigger. Options are 'arrow' or 'plus-minus'.
    * @default 'arrow'
@@ -60,10 +54,9 @@ type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
    * @default 'base-300'
    */
   borderColor?: Color | undefined;
-}>;
+};
 
 const {
-  as: Tag = 'div',
   triggerIcon = 'arrow',
   name,
   color,
@@ -97,8 +90,8 @@ if (providedClass) {
 }
 ---
 
-<Tag class={cssClass} tabindex="0" {...restProps}>
+<div class={cssClass} {...restProps}>
   {mode === 'checkbox' ? <Checkbox /> : null}
   {mode === 'radio' ? <RadioInput name={name} /> : null}
   <slot />
-</Tag>
+</div>
