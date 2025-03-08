@@ -1,6 +1,10 @@
 ---
 import type { HTMLTag, Polymorphic } from 'astro/types';
 import type { Color, CommonColor } from '../../type';
+import {
+  getBgAndContentColorClass,
+  getBgAndContentColorClassForFocus,
+} from '../../utils/bgAndContentColor';
 import { getBorderColorClass } from '../../utils/borderColor';
 import Checkbox from '../Checkbox/Checkbox.astro';
 import RadioInput from '../RadioInput/RadioInput.astro';
@@ -42,10 +46,10 @@ type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
 const {
   as: Tag = 'div',
   triggerIcon = 'arrow',
-  mode = 'checkbox',
   name,
   color,
   focusColor,
+  mode = focusColor ? 'focus' : 'checkbox',
   borderColor,
   class: providedClass,
   ...restProps
@@ -57,9 +61,14 @@ if (providedClass) {
   cssClass += ` ${providedClass}`;
 }
 
-if (!color && !focusColor) {
+if (!color) {
   cssClass += ` border ${getBorderColorClass(borderColor ?? 'base-300')}`;
 } else {
+  cssClass += ` ${getBgAndContentColorClass(color)}`;
+}
+
+if (focusColor) {
+  cssClass += ` ${getBgAndContentColorClassForFocus(focusColor)}`;
 }
 
 if (triggerIcon) {
