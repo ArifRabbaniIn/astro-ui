@@ -30,19 +30,19 @@ import { Button } from '@codemint/astro-ui';
 - Button
 - Checkbox
 - Collapse
-- Footer1
 - Input
 - JoinedContainer
 - JoinedItem
 - Link
+- Loading
 - NoScript
 - NumberInput
 - RadioInput
 
-## Roadmap
+## Blocks
 
-- Icon
-- Input With Label inside
+- Footer1
+- NotFound1 (404)
 
 ### Contributing
 
