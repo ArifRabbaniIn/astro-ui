@@ -37,8 +37,7 @@ type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
   mode?: 'focus' | 'checkbox' | 'radio';
 
   /**
-   * The name attribute for the collapse's radio input.
-   * Used for grouping when only one collapse item should be open at a time.
+   * The name attribute for the collapse's radio input. Used for grouping when only one collapse item should be open at a time.
    * This must be provided if `mode` is set to `radio`.
    */
   name?: string;
