@@ -41,7 +41,7 @@ import { Button } from '@codemint/astro-ui';
 
 ## Blocks
 
-- Footer1
+- Footer
 - NotFound1 (404)
 
 ### Contributing
