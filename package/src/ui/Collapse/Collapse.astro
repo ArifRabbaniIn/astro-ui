@@ -67,14 +67,16 @@ const {
   ...restProps
 }: Props = Astro.props;
 
-let cssClass = `collapse border ${getBorderColorClass(borderColor ?? 'base-300')}`;
+let cssClass = 'collapse';
 
 if (color) {
   cssClass += ` ${getBgAndContentColorClass(color)}`;
+} else {
+  cssClass += ` border ${getBorderColorClass(borderColor ?? 'base-300')}`;
 }
 
 if (focusColor) {
-  cssClass += ` ${getBgAndContentColorClassForFocus(focusColor)}`;
+  cssClass += ` focus:border-0 ${getBgAndContentColorClassForFocus(focusColor)}`;
 }
 
 if (triggerIcon) {
@@ -90,7 +92,7 @@ if (providedClass) {
 }
 ---
 
-<div class={cssClass} {...restProps}>
+<div tabindex="0" class={cssClass} {...restProps}>
   {mode === 'checkbox' ? <Checkbox /> : null}
   {mode === 'radio' ? <RadioInput name={name} /> : null}
   <slot />

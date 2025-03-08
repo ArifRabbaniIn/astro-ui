@@ -25,10 +25,12 @@ const {
   ...restProps
 }: Props = Astro.props;
 
-let cssClass = `card ${getCardBorderStyleClass(borderStyle)} ${getBorderColorClass(borderColor ?? 'base-300')}`;
+let cssClass = 'card';
 
 if (color) {
   cssClass += ` ${getBgAndContentColorClass(color)}`;
+} else {
+  cssClass += ` ${getCardBorderStyleClass(borderStyle)} ${getBorderColorClass(borderColor ?? 'base-300')}`;
 }
 
 if (size) {
