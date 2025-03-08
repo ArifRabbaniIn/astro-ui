@@ -45,7 +45,6 @@
   },
   "peerDependencies": {
     "astro": "^5.4.0",
-    "daisyui": "^5.0.0",
-    "@astro-utils/context": "^1.1.15"
+    "daisyui": "^5.0.0"
   }
 }
