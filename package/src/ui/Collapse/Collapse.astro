@@ -11,35 +11,55 @@ import RadioInput from '../RadioInput/RadioInput.astro';
 import type { CollapseIcon } from './types';
 
 /**
- * Props for the AccordionItem component. Allows specifying the HTML tag to render.
+ * Props for the Collapse component. Allows specifying the HTML tag to render.
  */
 type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
   /**
-   * The HTML tag to render the AccordionItem with.
+   * The HTML tag to render the Collapse with.
    * @default 'div'
    */
   as: Tag;
+
   /**
-   * The type of icon to use for the accordion trigger. Options are 'arrow' or 'plus-minus'.
+   * The type of icon to use for the collapse trigger. Options are 'arrow' or 'plus-minus'.
    * @default 'arrow'
    */
   triggerIcon?: CollapseIcon | undefined;
 
   /**
-   * If true, the collapse gets opened with focus. When the element loses focus, it gets closed
-   * @default 'checkbox'
+   * The interaction mode for the collapse.
+   * - 'focus': The collapse opens when focused and closes when focus is lost.
+   * - 'checkbox': The collapse acts like a checkbox, toggling open/closed on click.
+   * - 'radio': The collapse behaves like a radio button group, allowing only one to be open at a time. Requires `name` to be set.
+   *
+   * @default 'checkbox' unless `focusColor` is provided, then 'focus'
    */
   mode?: 'focus' | 'checkbox' | 'radio';
 
   /**
-   * The name attribute for the item's radio input. Used for grouping when only one accordion item should be open at a time. This must be provided, if `mode` is `radio`
+   * The name attribute for the collapse's radio input.
+   * Used for grouping when only one collapse item should be open at a time.
+   * This must be provided if `mode` is set to `radio`.
    */
   name?: string;
 
+  /**
+   * The base color scheme for the collapse. Sets both background and text/icon color.
+   */
   color?: CommonColor | undefined;
 
+  /**
+   * The color scheme to apply when the collapse is focused.
+   * If set, the `mode` defaults to 'focus'.
+   */
   focusColor?: CommonColor | undefined;
 
+  /**
+   * The color of the border.
+   * Only applied if `color` is not provided.
+   *
+   * @default 'base-300'
+   */
   borderColor?: Color | undefined;
 }>;
 
