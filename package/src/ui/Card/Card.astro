@@ -12,6 +12,7 @@ type Props = HTMLAttributes<'div'> & {
   borderColor?: Color | undefined;
   size?: Size | undefined;
   borderStyle?: CardBorderStyle | undefined;
+  figureStyle?: 'full' | 'side' | undefined;
 };
 
 const {
@@ -19,6 +20,7 @@ const {
   borderColor,
   size,
   borderStyle = 'solid',
+  figureStyle,
   class: providedClass,
   ...restProps
 }: Props = Astro.props;
@@ -31,6 +33,12 @@ if (color) {
 
 if (size) {
   cssClass += ` ${getCardSizeClass(size)}`;
+}
+
+if (figureStyle === 'full') {
+  cssClass += ' image-full';
+} else if (figureStyle === 'side') {
+  cssClass += ' card-side';
 }
 
 if (providedClass) {
