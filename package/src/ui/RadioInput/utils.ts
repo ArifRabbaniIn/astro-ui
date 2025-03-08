@@ -1,8 +1,8 @@
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 import type { Size } from '../../types/size';
 
-export function getRadioInputColorClass(color: Color) {
-  const classObject: Record<Color, string> = {
+export function getRadioInputColorClass(color: CommonColor) {
+  const classObject: Record<CommonColor, string> = {
     primary: 'radio-primary',
     secondary: 'radio-secondary',
     success: 'radio-success',
