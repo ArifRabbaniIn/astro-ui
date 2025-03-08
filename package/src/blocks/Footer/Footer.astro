@@ -4,7 +4,7 @@ import type { FooterProps } from './types';
 
 type Props = FooterProps;
 
-const { footerStyle } = Astro.props;
+const { variation } = Astro.props;
 ---
 
-{footerStyle === '1' ? <Footer1 {...Astro.props} /> : null}
+{variation === '1' ? <Footer1 {...Astro.props} /> : null}
