@@ -1,4 +1,4 @@
-import type { Color } from '../type';
+import type { Color } from '../types/color';
 
 export function getBorderColorClass(color: Color) {
   const classObject: Record<Color, string> = {
