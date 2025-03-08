@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 import type { Size } from '../../types/size';
 import { getCheckboxColorClass, getCheckboxSizeClass } from './utils';
 
@@ -11,7 +11,7 @@ type Props = Omit<HTMLAttributes<'input'>, 'type'> & {
   /**
    * The color scheme of the input.
    */
-  color?: Color | undefined;
+  color?: CommonColor | undefined;
   /**
    * The size of the input.
    */
