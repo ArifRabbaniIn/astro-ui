@@ -4,7 +4,7 @@ import type { NotFoundProps } from './types';
 
 type Props = NotFoundProps;
 
-const { variation } = Astro.props;
+const { variant } = Astro.props;
 ---
 
-{variation === '1' ? <NotFound1 {...Astro.props} /> : null}
+{variant === '1' ? <NotFound1 {...Astro.props} /> : null}
