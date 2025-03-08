@@ -1,20 +1,17 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types';
 
-/**
- * Props for the CollapseContent component. Allows specifying the HTML tag to render.
- */
-type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
-  /**
-   * The HTML tag to render the content with.
-   * @default 'div'
-   */
-  as: Tag;
-}>;
+type Props = HTMLAttributes<'div'>;
 
-const { as: Tag = 'div', class: providedClass, ...restProps } = Astro.props;
+const { class: providedClass, ...restProps } = Astro.props;
+
+let cssClass = 'collapse-content';
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
 ---
 
-<Tag class={`collapse-content ${providedClass ?? ''}`} {...restProps}>
+<div class={cssClass} {...restProps}>
   <slot />
-</Tag>
+</div>
