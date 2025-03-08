@@ -1,0 +1,20 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+
+/**
+ * Props for the CardTitle component. Allows specifying the HTML tag to render.
+ */
+type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
+  /**
+   * The HTML tag to render the title with.
+   * @default 'div'
+   */
+  as: Tag;
+}>;
+
+const { as: Tag = 'div', class: providedClass, ...restProps } = Astro.props;
+---
+
+<Tag class={`card-title ${providedClass ?? ''}`} {...restProps}>
+  <slot />
+</Tag>
