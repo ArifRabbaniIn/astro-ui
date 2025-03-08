@@ -5,6 +5,8 @@ import AccordionContent from './ui/Accordion/AccordionContent.astro';
 import AccordionItem from './ui/Accordion/AccordionItem.astro';
 import AccordionTrigger from './ui/Accordion/AccordionTrigger.astro';
 import Button from './ui/Button/Button.astro';
+import Card from './ui/Card/Card.astro';
+import CardTitle from './ui/Card/CardTitle.astro';
 import Checkbox from './ui/Checkbox/Checkbox.astro';
 import Collapse from './ui/Collapse/Collapse.astro';
 import CollapseContent from './ui/Collapse/CollapseContent.astro';
@@ -24,6 +26,8 @@ export {
   AccordionItem,
   AccordionTrigger,
   Button,
+  Card,
+  CardTitle,
   Checkbox,
   Collapse,
   CollapseContent,
