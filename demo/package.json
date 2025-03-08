@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astro-utils/context": "^1.1.15",
     "@codemint/astro-ui": "*",
     "@tailwindcss/vite": "^4.0.9",
     "astro": "^5.3.1",
