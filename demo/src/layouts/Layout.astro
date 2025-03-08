@@ -1,5 +1,5 @@
 ---
-import { Footer1 } from '@codemint/astro-ui';
+import { Footer } from '@codemint/astro-ui';
 import '../styles/global.css';
 ---
 
@@ -18,7 +18,8 @@ import '../styles/global.css';
         <slot />
       </div>
     </main>
-    <Footer1
+    <Footer
+      footerStyle="1"
       authorName="Arif Rabbani"
       authorWebsiteUrl="https://github.com/arabbani"
       links={[
