@@ -5,20 +5,21 @@ import type { Size } from '../../types/size';
 import { getCheckboxColorClass, getCheckboxSizeClass } from './utils';
 
 /**
- * Props for the Input component.
+ * Props for the Checkbox component.
  */
 type Props = Omit<HTMLAttributes<'input'>, 'type'> & {
   /**
-   * The color scheme of the input.
+   * The color scheme of the checkbox.
    */
   color?: CommonColor | undefined;
+
   /**
-   * The size of the input.
+   * The size of the checkbox.
    */
-  checkboxSize?: Size | undefined;
+  size?: Size | undefined;
 };
 
-const { color, checkboxSize, class: providedClass, ...restProps } = Astro.props;
+const { color, size, class: providedClass, ...restProps } = Astro.props;
 
 let cssClass = 'checkbox';
 
@@ -26,8 +27,8 @@ if (color) {
   cssClass += ` ${getCheckboxColorClass(color)}`;
 }
 
-if (checkboxSize) {
-  cssClass += ` ${getCheckboxSizeClass(checkboxSize)}`;
+if (size) {
+  cssClass += ` ${getCheckboxSizeClass(size)}`;
 }
 
 if (providedClass) {
