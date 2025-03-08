@@ -41,9 +41,7 @@ import { Button } from '@codemint/astro-ui';
 
 ## Roadmap
 
-- Button With Loading Spinner
-- Icon Button
-- Loader
+- Icon
 - Input With Label inside
 
 ### Contributing
