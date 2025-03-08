@@ -1,7 +1,10 @@
 ---
+import Context from '@astro-utils/context/Context.astro';
 import JoinedContainer from '../Joined/JoinedContainer.astro';
 ---
 
-<JoinedContainer alignment="vertical">
-  <slot />
-</JoinedContainer>
+<Context name=`astro-ui-accordion-${Math.random()}`>
+  <JoinedContainer alignment="vertical">
+    <slot />
+  </JoinedContainer>
+</Context>
