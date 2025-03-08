@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import type { Color, CommonColor } from '../../types/color';
+import type { Color } from '../../types/color';
 import type { Size } from '../../types/size';
 import { getBgAndContentColorClass } from '../../utils/bgAndContentColor';
 import { getBorderColorClass } from '../../utils/borderColor';
@@ -8,7 +8,7 @@ import type { CardBorderStyle } from './types';
 import { getCardBorderStyleClass, getCardSizeClass } from './utils';
 
 type Props = HTMLAttributes<'div'> & {
-  color?: CommonColor | undefined;
+  color?: Color | undefined;
   borderColor?: Color | undefined;
   size?: Size | undefined;
   borderStyle?: CardBorderStyle | undefined;

@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import type { Color, CommonColor } from '../../types/color';
+import type { Color } from '../../types/color';
 import {
   getBgAndContentColorClass,
   getBgAndContentColorClassForFocus,
@@ -39,13 +39,13 @@ type Props = HTMLAttributes<'div'> & {
   /**
    * The base color scheme for the collapse. Sets both background and text/icon color.
    */
-  color?: CommonColor | undefined;
+  color?: Color | undefined;
 
   /**
    * The color scheme to apply when the collapse is focused.
    * If set, the `mode` defaults to 'focus'.
    */
-  focusColor?: CommonColor | undefined;
+  focusColor?: Color | undefined;
 
   /**
    * The color of the border.
