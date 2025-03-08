@@ -1,5 +1,5 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types';
 import type { Color, CommonColor } from '../../types/color';
 import type { Size } from '../../types/size';
 import { getBgAndContentColorClass } from '../../utils/bgAndContentColor';
@@ -7,17 +7,15 @@ import { getBorderColorClass } from '../../utils/borderColor';
 import type { CardBorderStyle } from './types';
 import { getCardBorderStyleClass, getCardSizeClass } from './utils';
 
-type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
-  as: Tag;
+type Props = HTMLAttributes<'div'> & {
   color?: CommonColor | undefined;
   borderColor?: Color | undefined;
   size?: Size | undefined;
   borderStyle?: CardBorderStyle | undefined;
   centered?: boolean | undefined;
-}>;
+};
 
 const {
-  as: Tag = 'div',
   color,
   borderColor,
   size,
@@ -42,8 +40,8 @@ if (providedClass) {
 }
 ---
 
-<Tag class={cssClass} {...restProps}>
+<div class={cssClass} {...restProps}>
   <div class:list={['card-body', { 'items-center text-center': centered }]}>
     <slot />
   </div>
-</Tag>
+</div>
