@@ -1,0 +1,10 @@
+---
+import NotFound1 from './NotFound1.astro';
+import type { NotFoundProps } from './types';
+
+type Props = NotFoundProps;
+
+const { variation } = Astro.props;
+---
+
+{variation === '1' ? <NotFound1 {...Astro.props} /> : null}
