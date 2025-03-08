@@ -1,4 +1,4 @@
-import NotFound1 from './blocks/404/NotFound1.astro';
+import NotFound from './blocks/404/NotFound.astro';
 import Footer from './blocks/Footer/Footer.astro';
 import Accordion from './ui/Accordion/Accordion.astro';
 import AccordionContent from './ui/Accordion/AccordionContent.astro';
@@ -35,7 +35,7 @@ export {
   Link,
   Loading,
   NoScript,
-  NotFound1,
+  NotFound,
   NumberInput,
   RadioInput,
 };
