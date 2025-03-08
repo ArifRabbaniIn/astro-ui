@@ -2,7 +2,7 @@
 import type { ComponentProps } from 'astro/types';
 import Collapse from '../Collapse/Collapse.astro';
 
-type Props = Omit<ComponentProps<typeof Collapse>, 'name'> & {
+type Props = Omit<ComponentProps<typeof Collapse>, 'name' | 'mode'> & {
   /**
    * The name attribute for the item's radio input. Used for grouping when only one accordion item should be open at a time.
    */
