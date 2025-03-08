@@ -11,7 +11,11 @@ type Props = {
   class="flex w-full flex-col sm:justify-center gap-x-16 max-sm:items-center sm:flex-row">
   <p>
     Developed by
-    <Link color="primary" target="_blank" href={Astro.props.authorWebsiteUrl}>
+    <Link
+      color="primary"
+      hoverLink
+      target="_blank"
+      href={Astro.props.authorWebsiteUrl}>
       {Astro.props.authorName}
     </Link>
   </p>
