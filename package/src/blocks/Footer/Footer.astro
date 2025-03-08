@@ -1,0 +1,10 @@
+---
+import Footer1 from './Footer1.astro';
+import type { FooterProps } from './types';
+
+type Props = FooterProps;
+
+const { footerStyle, ...restProps } = Astro.props;
+---
+
+{footerStyle === '1' ? <Footer1 {...restProps} /> : null}

@@ -1,5 +1,5 @@
 import NotFound1 from './blocks/404/NotFound1.astro';
-import Footer1 from './blocks/Footer/Footer1.astro';
+import Footer from './blocks/Footer/Footer.astro';
 import Accordion from './ui/Accordion/Accordion.astro';
 import AccordionContent from './ui/Accordion/AccordionContent.astro';
 import AccordionItem from './ui/Accordion/AccordionItem.astro';
@@ -28,7 +28,7 @@ export {
   Collapse,
   CollapseContent,
   CollapseTrigger,
-  Footer1,
+  Footer,
   Input,
   JoinedContainer,
   JoinedItem,
