@@ -1,3 +1,4 @@
+import NotFound1 from './blocks/404/NotFound1.astro';
 import Footer1 from './blocks/Footer/Footer1.astro';
 import Accordion from './ui/Accordion/Accordion.astro';
 import AccordionContent from './ui/Accordion/AccordionContent.astro';
@@ -16,10 +17,7 @@ import NoScript from './ui/NoScript.astro';
 import NumberInput from './ui/NumberInput.astro';
 import RadioInput from './ui/RadioInput/RadioInput.astro';
 
-export * from './types/collapse';
-export * from './types/color';
-export * from './types/link';
-export * from './types/size';
+export * from './type';
 
 export {
   Accordion,
@@ -37,6 +35,7 @@ export {
   JoinedItem,
   Link,
   NoScript,
+  NotFound1,
   NumberInput,
   RadioInput,
 };
