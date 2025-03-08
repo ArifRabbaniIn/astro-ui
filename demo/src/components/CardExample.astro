@@ -1,0 +1,29 @@
+---
+import {
+  Button,
+  Card,
+  CardActions,
+  CardBody,
+  CardFigure,
+  CardTitle,
+} from '@codemint/astro-ui';
+---
+
+<Card class="w-96" color="primary">
+  <CardFigure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes"
+    />
+  </CardFigure>
+  <CardBody>
+    <CardTitle>Card Title</CardTitle>
+    <p>
+      A card component has a figure, a body part, and inside body there are
+      title and actions parts
+    </p>
+    <CardActions justify="end">
+      <Button>Buy Now</Button>
+    </CardActions>
+  </CardBody>
+</Card>

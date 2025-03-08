@@ -5,7 +5,7 @@ type Props = HTMLAttributes<'div'>;
 
 const { class: providedClass, ...restProps } = Astro.props;
 
-let cssClass = 'collapse-content';
+let cssClass = 'card-title';
 
 if (providedClass) {
   cssClass += ` ${providedClass}`;

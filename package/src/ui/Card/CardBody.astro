@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'div'> & {
+  centered?: boolean | undefined;
+};
+
+const {
+  centered = false,
+  class: providedClass,
+  ...restProps
+}: Props = Astro.props;
+
+let cssClass = 'card-body';
+
+if (centered) {
+  cssClass += ' items-center text-center';
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<div class={cssClass} {...restProps}>
+  <slot />
+</div>
