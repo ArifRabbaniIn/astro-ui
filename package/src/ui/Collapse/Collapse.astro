@@ -74,11 +74,9 @@ const {
   ...restProps
 }: Props = Astro.props;
 
-let cssClass = 'collapse';
+let cssClass = `collapse border ${getBorderColorClass(borderColor ?? 'base-300')}`;
 
-if (!color) {
-  cssClass += ` border ${getBorderColorClass(borderColor ?? 'base-300')}`;
-} else {
+if (color) {
   cssClass += ` ${getBgAndContentColorClass(color)}`;
 }
 
