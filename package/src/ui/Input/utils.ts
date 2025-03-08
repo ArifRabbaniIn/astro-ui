@@ -1,8 +1,8 @@
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 import type { Size } from '../../types/size';
 
-export function getInputColorClass(color: Color) {
-  const classObject: Record<Color, string> = {
+export function getInputColorClass(color: CommonColor) {
+  const classObject: Record<CommonColor, string> = {
     primary: 'input-primary',
     secondary: 'input-secondary',
     success: 'input-success',
