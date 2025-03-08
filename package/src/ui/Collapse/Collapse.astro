@@ -57,10 +57,6 @@ const {
 
 let cssClass = 'collapse';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (!color) {
   cssClass += ` border ${getBorderColorClass(borderColor ?? 'base-300')}`;
 } else {
@@ -77,6 +73,10 @@ if (triggerIcon) {
   } else if (triggerIcon === 'plus-minus') {
     cssClass += ' collapse-plus';
   }
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 

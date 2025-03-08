@@ -22,16 +22,16 @@ const { color, checkboxSize, class: providedClass, ...restProps } = Astro.props;
 
 let cssClass = 'checkbox';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (color) {
   cssClass += ` ${getCheckboxColorClass(color)}`;
 }
 
 if (checkboxSize) {
   cssClass += ` ${getCheckboxSizeClass(checkboxSize)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 

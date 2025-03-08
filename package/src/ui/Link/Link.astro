@@ -17,16 +17,16 @@ const {
 
 let cssClass = 'link';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (color) {
   cssClass += ` ${getLinkColorClass(color)}`;
 }
 
 if (hoverLink) {
   cssClass += ' link-hover';
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 

@@ -34,10 +34,6 @@ const {
 let cssClass =
   'input validator focus:outline-none focus-visible:outline-none focus-within:outline-0';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (color) {
   cssClass += ` ${getInputColorClass(color)}`;
 }
@@ -48,6 +44,10 @@ if (inputSize) {
 
 if (ghost) {
   cssClass += ` input-ghost`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 

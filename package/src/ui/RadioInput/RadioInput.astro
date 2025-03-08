@@ -23,16 +23,16 @@ const { color, inputSize, class: providedClass, ...restProps } = Astro.props;
 let cssClass =
   'radio focus:outline-offset-0 focus-visible:outline-offeset-0 focus-within:outline-offeset-0';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (color) {
   cssClass += ` ${getRadioInputColorClass(color)}`;
 }
 
 if (inputSize) {
   cssClass += ` ${getRadioInputSizeClass(inputSize)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 

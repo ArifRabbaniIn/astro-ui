@@ -31,10 +31,6 @@ const {
 
 let cssClass = 'btn';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (color) {
   cssClass += ` ${getButtonColorClass(color)}`;
 }
@@ -53,6 +49,10 @@ if (modifier) {
 
 if (active) {
   cssClass += ' btn-active';
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 

@@ -25,16 +25,16 @@ const {
 
 let cssClass = 'join';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (alignment) {
   if (alignment === 'vertical') {
     cssClass += ' join-vertical';
   } else if (alignment === 'horizontal') {
     cssClass += ' join-horizontal';
   }
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 
