@@ -12,7 +12,6 @@ type Props = HTMLAttributes<'div'> & {
   borderColor?: Color | undefined;
   size?: Size | undefined;
   borderStyle?: CardBorderStyle | undefined;
-  centered?: boolean | undefined;
 };
 
 const {
@@ -20,7 +19,6 @@ const {
   borderColor,
   size,
   borderStyle = 'solid',
-  centered = false,
   class: providedClass,
   ...restProps
 }: Props = Astro.props;
@@ -41,7 +39,5 @@ if (providedClass) {
 ---
 
 <div class={cssClass} {...restProps}>
-  <div class:list={['card-body', { 'items-center text-center': centered }]}>
-    <slot />
-  </div>
+  <slot />
 </div>
