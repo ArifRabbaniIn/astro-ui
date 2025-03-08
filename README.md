@@ -28,6 +28,7 @@ import { Button } from '@codemint/astro-ui';
 
 - Accordion
 - Button
+- Card
 - Checkbox
 - Collapse
 - Input
@@ -35,9 +36,9 @@ import { Button } from '@codemint/astro-ui';
 - JoinedItem
 - Link
 - Loading
+- RadioInput
 - NoScript
 - NumberInput
-- RadioInput
 
 ## Blocks
 
