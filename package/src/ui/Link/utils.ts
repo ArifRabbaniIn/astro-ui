@@ -1,7 +1,7 @@
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 
-export function getLinkColorClass(color: Color) {
-  const classObject: Record<Color, string> = {
+export function getLinkColorClass(color: CommonColor) {
+  const classObject: Record<CommonColor, string> = {
     primary: 'link-primary',
     secondary: 'link-secondary',
     success: 'link-success',

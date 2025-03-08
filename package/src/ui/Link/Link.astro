@@ -1,10 +1,10 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 import { getLinkColorClass } from './utils';
 
 type Props = HTMLAttributes<'a'> & {
-  color?: Color | undefined;
+  color?: CommonColor | undefined;
   hoverLink?: boolean | undefined;
 };
 
