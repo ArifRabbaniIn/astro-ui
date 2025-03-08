@@ -1,9 +1,9 @@
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 import type { Size } from '../../types/size';
 import type { ButtonModifier, ButtonStyle } from './types';
 
-export function getButtonColorClass(color: Color) {
-  const classObject: Record<Color, string> = {
+export function getButtonColorClass(color: CommonColor) {
+  const classObject: Record<CommonColor, string> = {
     primary: 'btn-primary',
     secondary: 'btn-secondary',
     success: 'btn-success',

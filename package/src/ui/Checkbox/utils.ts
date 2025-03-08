@@ -1,8 +1,8 @@
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 import type { Size } from '../../types/size';
 
-export function getCheckboxColorClass(color: Color) {
-  const classObject: Record<Color, string> = {
+export function getCheckboxColorClass(color: CommonColor) {
+  const classObject: Record<CommonColor, string> = {
     primary: 'checkbox-primary',
     secondary: 'checkbox-secondary',
     success: 'checkbox-success',

@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import type { Color } from '../../types/color';
+import type { CommonColor } from '../../types/color';
 import type { Size } from '../../types/size';
 import { getRadioInputColorClass, getRadioInputSizeClass } from './utils';
 
@@ -11,7 +11,7 @@ type Props = Omit<HTMLAttributes<'input'>, 'type'> & {
   /**
    * The color scheme of the input.
    */
-  color?: Color | undefined;
+  color?: CommonColor | undefined;
   /**
    * The size of the input.
    */
@@ -23,16 +23,16 @@ const { color, inputSize, class: providedClass, ...restProps } = Astro.props;
 let cssClass =
   'radio focus:outline-offset-0 focus-visible:outline-offeset-0 focus-within:outline-offeset-0';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
-
 if (color) {
   cssClass += ` ${getRadioInputColorClass(color)}`;
 }
 
 if (inputSize) {
   cssClass += ` ${getRadioInputSizeClass(inputSize)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 

@@ -1,8 +1,14 @@
 ---
 import type { HTMLTag, Polymorphic } from 'astro/types';
-import type { CollapseIcon } from '../../types/collapse';
+import type { Color, CommonColor } from '../../type';
+import {
+  getBgAndContentColorClass,
+  getBgAndContentColorClassForFocus,
+} from '../../utils/bgAndContentColor';
+import { getBorderColorClass } from '../../utils/borderColor';
 import Checkbox from '../Checkbox/Checkbox.astro';
 import RadioInput from '../RadioInput/RadioInput.astro';
+import type { CollapseIcon } from './types';
 
 /**
  * Props for the AccordionItem component. Allows specifying the HTML tag to render.
@@ -29,21 +35,36 @@ type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
    * The name attribute for the item's radio input. Used for grouping when only one accordion item should be open at a time. This must be provided, if `mode` is `radio`
    */
   name?: string;
+
+  color?: CommonColor | undefined;
+
+  focusColor?: CommonColor | undefined;
+
+  borderColor?: Color | undefined;
 }>;
 
 const {
   as: Tag = 'div',
   triggerIcon = 'arrow',
-  mode = 'checkbox',
   name,
+  color,
+  focusColor,
+  mode = focusColor ? 'focus' : 'checkbox',
+  borderColor,
   class: providedClass,
   ...restProps
 }: Props = Astro.props;
 
-let cssClass = 'collapse border border-base-300';
+let cssClass = 'collapse';
 
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
+if (!color) {
+  cssClass += ` border ${getBorderColorClass(borderColor ?? 'base-300')}`;
+} else {
+  cssClass += ` ${getBgAndContentColorClass(color)}`;
+}
+
+if (focusColor) {
+  cssClass += ` ${getBgAndContentColorClassForFocus(focusColor)}`;
 }
 
 if (triggerIcon) {
@@ -52,6 +73,10 @@ if (triggerIcon) {
   } else if (triggerIcon === 'plus-minus') {
     cssClass += ' collapse-plus';
   }
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
 }
 ---
 
