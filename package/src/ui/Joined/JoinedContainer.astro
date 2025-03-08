@@ -1,37 +1,18 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types';
 
-/**
- * Props for the JoinedContainer component. Allows specifying the HTML tag to render.
- */
-type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{
-  /**
-   * The HTML tag to render the JoinedContainer with.
-   * @default 'div'
-   */
-  as: Tag;
-
-  /**
-   * Whether the items should be arranged vertically.  Options are 'horizontal' or 'vertical'
-   */
+type Props = HTMLAttributes<'div'> & {
   alignment?: 'horizontal' | 'vertical' | undefined;
-}>;
+};
 
-const {
-  as: Tag = 'div',
-  alignment,
-  class: providedClass,
-  ...restProps
-} = Astro.props;
+const { alignment, class: providedClass, ...restProps } = Astro.props;
 
 let cssClass = 'join';
 
-if (alignment) {
-  if (alignment === 'vertical') {
-    cssClass += ' join-vertical';
-  } else if (alignment === 'horizontal') {
-    cssClass += ' join-horizontal';
-  }
+if (alignment === 'vertical') {
+  cssClass += ' join-vertical';
+} else if (alignment === 'horizontal') {
+  cssClass += ' join-horizontal';
 }
 
 if (providedClass) {
@@ -39,6 +20,6 @@ if (providedClass) {
 }
 ---
 
-<Tag class={cssClass} {...restProps}>
+<div class={cssClass} {...restProps}>
   <slot />
-</Tag>
+</div>
