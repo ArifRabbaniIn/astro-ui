@@ -4,6 +4,7 @@ import Accordion from './ui/Accordion/Accordion.astro';
 import AccordionContent from './ui/Accordion/AccordionContent.astro';
 import AccordionItem from './ui/Accordion/AccordionItem.astro';
 import AccordionTrigger from './ui/Accordion/AccordionTrigger.astro';
+import Alert from './ui/Alert/Alert.astro';
 import Button from './ui/Button/Button.astro';
 import Card from './ui/Card/Card.astro';
 import CardActions from './ui/Card/CardActions.astro';
@@ -28,6 +29,7 @@ export {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  Alert,
   Button,
   Card,
   CardActions,
