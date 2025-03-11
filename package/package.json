@@ -16,16 +16,16 @@
   ],
   "author": {
     "name": "Arif Rabbani",
-    "url": "https://github.com/arabbani"
+    "url": "https://github.com/ArifRabbaniIn"
   },
-  "homepage": "https://github.com/arabbani/astro-ui",
+  "homepage": "https://github.com/ArifRabbaniIn/astro-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arabbani/astro-ui.git",
+    "url": "git+https://github.com/ArifRabbaniIn/astro-ui.git",
     "directory": "package"
   },
   "bugs": {
-    "url": "https://github.com/arabbani/astro-ui/issues"
+    "url": "https://github.com/ArifRabbaniIn/astro-ui/issues"
   },
   "license": "MIT",
   "type": "module",
