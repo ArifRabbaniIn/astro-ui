@@ -22,10 +22,10 @@
 
 @layer base {
   body {
-    @apply min-h-svh flex flex-col;
+    @apply min-h-svh h-svh flex flex-col;
   }
 
   main {
-    @apply container mx-auto p-5 grow sm:max-w-screen-sm;
+    @apply container mx-auto p-5 grow;
   }
 }
