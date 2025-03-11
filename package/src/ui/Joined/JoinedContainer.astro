@@ -1,17 +1,22 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import type { Direction } from '../../types/direction';
 
 type Props = HTMLAttributes<'div'> & {
-  alignment?: 'horizontal' | 'vertical' | undefined;
+  direction?: Direction | undefined;
 };
 
-const { alignment, class: providedClass, ...restProps } = Astro.props;
+const {
+  direction = 'vertical',
+  class: providedClass,
+  ...restProps
+} = Astro.props;
 
 let cssClass = 'join';
 
-if (alignment === 'vertical') {
+if (direction === 'vertical') {
   cssClass += ' join-vertical';
-} else if (alignment === 'horizontal') {
+} else if (direction === 'horizontal') {
   cssClass += ' join-horizontal';
 }
 
