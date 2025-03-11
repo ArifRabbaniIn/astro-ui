@@ -1,0 +1,48 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { Direction } from '../../types/direction';
+import type { AlertColor, AlertStyle } from './types';
+import {
+  getAlertColorClass,
+  getAlertDirectionClass,
+  getAlertStyleClass,
+} from './utils';
+
+type Props = HTMLAttributes<'div'> & {
+  type?: AlertColor | undefined;
+  alertStyle?: AlertStyle | undefined;
+  direction?: Direction | undefined;
+};
+
+const {
+  type,
+  alertStyle,
+  direction = 'horizontal',
+  class: providedClass,
+  ...restProps
+} = Astro.props;
+
+let cssClass = 'alert';
+
+if (type) {
+  cssClass += ` ${getAlertColorClass(type)}`;
+}
+
+if (alertStyle) {
+  cssClass += ` ${getAlertStyleClass(alertStyle)}`;
+}
+
+if (direction) {
+  cssClass += ` ${getAlertDirectionClass(direction)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+
+// TODO: Icon and Action
+---
+
+<div role="alert" class={cssClass} {...restProps}>
+  <slot />
+</div>
