@@ -22,7 +22,7 @@
 
 @layer base {
   body {
-    @apply h-svh;
+    @apply min-h-svh;
   }
 }
 
