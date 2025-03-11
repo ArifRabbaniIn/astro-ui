@@ -22,12 +22,10 @@
 
 @layer base {
   body {
-    @apply min-h-svh;
+    @apply min-h-svh flex flex-col;
   }
-}
 
-@layer components {
-  .main-content {
-    @apply container mx-auto h-full p-5;
+  main {
+    @apply container mx-auto p-5 grow sm:max-w-screen-sm;
   }
 }

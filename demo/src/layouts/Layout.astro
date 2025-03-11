@@ -12,11 +12,9 @@ import '../styles/global.css';
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body class="flex flex-col justify-between">
-    <main class="grow">
-      <div class="main-content">
-        <slot />
-      </div>
+  <body>
+    <main>
+      <slot />
     </main>
     <Footer
       variant="1"
