@@ -21,8 +21,7 @@ type Props = Omit<HTMLAttributes<'input'>, 'type'> & {
 
 const { color, size, class: providedClass, ...restProps } = Astro.props;
 
-let cssClass =
-  'radio focus:outline-offset-0 focus-visible:outline-offeset-0 focus-within:outline-offeset-0';
+let cssClass = 'radio focus-visible:outline-1';
 
 if (color) {
   cssClass += ` ${getRadioInputColorClass(color)}`;
