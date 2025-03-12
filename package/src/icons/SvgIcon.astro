@@ -3,6 +3,8 @@ import type { HTMLAttributes } from 'astro/types';
 
 type Props = Omit<HTMLAttributes<'svg'>, 'fill'>;
 
+const DEFAULT_CSS = 'cursor-pointer hover:opacity-75'
+
 const props: Props = {
   width: 24,
   height: 24,
@@ -12,6 +14,7 @@ const props: Props = {
   'stroke-linecap': 'round',
   'stroke-linejoin': 'round',
   ...Astro.props,
+  class: Astro.props.class ? `${DEFAULT_CSS} ${Astro.props.class}` : DEFAULT_CSS,
 };
 ---
 
