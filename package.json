@@ -9,7 +9,8 @@
   },
   "workspaces": [
     "demo",
-    "package"
+    "package",
+    "docs"
   ],
   "type": "module",
   "scripts": {
