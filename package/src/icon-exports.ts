@@ -8,6 +8,7 @@ import InstagramIcon from './icons/InstagramIcon.astro';
 import LinkedInIcon from './icons/LinkedInIcon.astro';
 import SlackIcon from './icons/SlackIcon.astro';
 import TriangleAlertIcon from './icons/TriangleAlertIcon.astro';
+import TwitterIcon from './icons/TwitterIcon.astro';
 import YoutubeIcon from './icons/YoutubeIcon.astro';
 
 export {
@@ -21,5 +22,6 @@ export {
   LinkedInIcon,
   SlackIcon,
   TriangleAlertIcon,
+  TwitterIcon,
   YoutubeIcon,
 };
