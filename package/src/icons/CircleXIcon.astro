@@ -1,0 +1,12 @@
+---
+import type { ComponentProps } from 'astro/types';
+import SvgIcon from './SvgIcon.astro';
+
+type Props = ComponentProps<typeof SvgIcon>;
+---
+
+<SvgIcon {...Astro.props}>
+  <circle cx="12" cy="12" r="10"></circle>
+  <path d="m15 9-6 6"></path>
+  <path d="m9 9 6 6"></path>
+</SvgIcon>
