@@ -4,6 +4,7 @@ import FacebookIcon from './icons/FacebookIcon.astro';
 import GithubIcon from './icons/GithubIcon.astro';
 import InfoIcon from './icons/InfoIcon.astro';
 import LinkedInIcon from './icons/LinkedInIcon.astro';
+import SlackIcon from './icons/SlackIcon.astro';
 import TriangleAlertIcon from './icons/TriangleAlertIcon.astro';
 
 export {
@@ -13,5 +14,6 @@ export {
   GithubIcon,
   InfoIcon,
   LinkedInIcon,
+  SlackIcon,
   TriangleAlertIcon,
 };
