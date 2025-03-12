@@ -3,11 +3,21 @@ import type { HTMLAttributes } from 'astro/types';
 
 type Props = Omit<HTMLAttributes<'svg'>, 'fill'> & {
   fill?: boolean | undefined;
+  dimOnHover?: boolean | undefined;
 };
 
-const { fill = false, class: providedClass, ...restProps } = Astro.props;
+const {
+  fill = false,
+  dimOnHover = true,
+  class: providedClass,
+  ...restProps
+} = Astro.props;
 
-let cssClass = 'cursor-pointer hover:opacity-75';
+let cssClass = 'cursor-pointer';
+
+if (dimOnHover) {
+  cssClass += ' hover:opacity-75';
+}
 
 if (providedClass) {
   cssClass += ` ${providedClass}`;
