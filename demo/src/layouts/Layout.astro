@@ -1,5 +1,5 @@
 ---
-import { Footer } from '@codemint/astro-ui';
+import { Body, Footer, Main, NoScript } from '@codemint/astro-ui';
 import '../styles/global.css';
 ---
 
@@ -12,11 +12,13 @@ import '../styles/global.css';
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body>
-    <main>
+  <Body>
+    <Main>
+      <NoScript />
       <slot />
-    </main>
-    <Footer
+    </Main>
+    <Footer />
+    <!-- <Footer
       variant="1"
       authorName="Arif Rabbani"
       authorWebsiteUrl="https://github.com/ArifRabbaniIn"
@@ -24,6 +26,6 @@ import '../styles/global.css';
         { href: '/', label: 'Terms of Service' },
         { href: '/', label: 'Policy' },
       ]}
-    />
-  </body>
+    /> -->
+  </Body>
 </html>

@@ -1,0 +1,43 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = Omit<HTMLAttributes<'svg'>, 'fill'> & {
+  fill?: boolean | undefined;
+  dimOnHover?: boolean | undefined;
+};
+
+const {
+  fill = false,
+  dimOnHover = true,
+  class: providedClass,
+  ...restProps
+} = Astro.props;
+
+let cssClass = 'cursor-pointer';
+
+if (dimOnHover) {
+  cssClass += ' hover:opacity-75';
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+
+const fillColor: string = fill ? 'currentColor' : 'none';
+
+const props: Omit<Props, 'fill'> = {
+  width: 24,
+  height: 24,
+  viewBox: '0 0 24 24',
+  'stroke-width': 1,
+  stroke: 'currentColor',
+  'stroke-linecap': 'round',
+  'stroke-linejoin': 'round',
+  class: cssClass,
+  ...restProps,
+};
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" role="img" fill={fillColor} {...props}>
+  <slot />
+</svg>

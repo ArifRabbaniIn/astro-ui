@@ -1,0 +1,39 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { CommonColor } from '../../../types/color';
+import type { Size } from '../../../types/size';
+import { getCheckboxColorClass, getCheckboxSizeClass } from './utils';
+
+/**
+ * Props for the Checkbox component.
+ */
+type Props = Omit<HTMLAttributes<'input'>, 'type'> & {
+  /**
+   * The color scheme of the checkbox.
+   */
+  color?: CommonColor | undefined;
+
+  /**
+   * The size of the checkbox.
+   */
+  size?: Size | undefined;
+};
+
+const { color, size, class: providedClass, ...restProps } = Astro.props;
+
+let cssClass = 'checkbox focus-visible:outline-1 focus:outline-offset-0';
+
+if (color) {
+  cssClass += ` ${getCheckboxColorClass(color)}`;
+}
+
+if (size) {
+  cssClass += ` ${getCheckboxSizeClass(size)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<input type="checkbox" class={cssClass} {...restProps} />

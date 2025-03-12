@@ -1,0 +1,16 @@
+---
+import CircleXIcon from '../icons/CircleXIcon.astro';
+import Alert from './Alert/Alert.astro';
+---
+
+<noscript>
+  <Alert type="error">
+    <slot>
+      <CircleXIcon />
+      <span>
+        JavaScript is disabled in your browser. Please enable it to use this
+        application.
+      </span>
+    </slot>
+  </Alert>
+</noscript>

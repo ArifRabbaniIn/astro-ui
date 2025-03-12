@@ -19,13 +19,3 @@
 @theme {
   --font-sans: system-ui, sans-serif;
 }
-
-@layer base {
-  body {
-    @apply min-h-svh h-svh flex flex-col;
-  }
-
-  main {
-    @apply container mx-auto p-5 grow;
-  }
-}

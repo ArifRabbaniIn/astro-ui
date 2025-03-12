@@ -1,0 +1,27 @@
+---
+import type { ComponentProps } from 'astro/types';
+import { MailIcon } from '../../icons-exports';
+import Link from '../ui/Link/Link.astro';
+
+type Props = ComponentProps<typeof Link> & {
+  emailAddress: string;
+};
+
+const {
+  emailAddress,
+  title = 'Email Us',
+  class: providedClass,
+  ...restProps
+} = Astro.props;
+
+let cssClass = 'no-underline';
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<Link href={`mailto:${emailAddress}`} {title} class={cssClass} {...restProps}>
+  <MailIcon dimOnHover={false} class="inline" />
+  <slot>{emailAddress}</slot>
+</Link>
