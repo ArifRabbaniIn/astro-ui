@@ -19,9 +19,3 @@
 @theme {
   --font-sans: system-ui, sans-serif;
 }
-
-@layer base {
-  main {
-    @apply container mx-auto p-5 grow;
-  }
-}
