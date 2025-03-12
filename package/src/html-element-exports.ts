@@ -1,5 +1,5 @@
 import Body from './html-element/Body.astro';
-import Main from './html-element/Main.astro';
 import Footer from './html-element/Footer.astro';
+import Main from './html-element/Main.astro';
 
-export { Body, Main, Footer as FooterEl };
+export { Body, Footer, Main };
