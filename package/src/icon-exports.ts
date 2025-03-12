@@ -6,6 +6,7 @@ import InfoIcon from './icons/InfoIcon.astro';
 import LinkedInIcon from './icons/LinkedInIcon.astro';
 import SlackIcon from './icons/SlackIcon.astro';
 import TriangleAlertIcon from './icons/TriangleAlertIcon.astro';
+import YoutubeIcon from './icons/YoutubeIcon.astro';
 
 export {
   CircleCheckIcon,
@@ -16,4 +17,5 @@ export {
   LinkedInIcon,
   SlackIcon,
   TriangleAlertIcon,
+  YoutubeIcon,
 };
