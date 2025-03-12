@@ -18,7 +18,6 @@ import JoinedContainer from './components/ui/Joined/JoinedContainer.astro';
 import JoinedItem from './components/ui/Joined/JoinedItem.astro';
 import Link from './components/ui/Link/Link.astro';
 import Loading from './components/ui/Loading/Loading.astro';
-import NoScript from './components/ui/NoScript.astro';
 import NumberInput from './components/ui/NumberInput.astro';
 import RadioInput from './components/ui/RadioInput/RadioInput.astro';
 
@@ -43,7 +42,6 @@ export {
   JoinedItem,
   Link,
   Loading,
-  NoScript,
   NumberInput,
   RadioInput,
 };
