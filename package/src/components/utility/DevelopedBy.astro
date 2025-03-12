@@ -1,0 +1,18 @@
+---
+import HeartIcon from '../icons/HeartIcon.astro';
+import Link from '../ui/Link/Link.astro';
+
+type Props = {
+  authorName: string;
+  authorWebsiteUrl: string;
+};
+---
+
+<Link
+  color="primary"
+  hoverLink
+  target="_blank"
+  href={Astro.props.authorWebsiteUrl}
+  class="hover:no-underline">
+  Crafted with <HeartIcon fill class="inline" /> by {Astro.props.authorName}
+</Link>
