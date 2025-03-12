@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'main'> & {
+  applyContainerClass?: boolean | undefined;
+};
+
+const {
+  class: providedClas,
+  applyContainerClass = true,
+  ...restProps
+} = Astro.props;
+
+let cssClass = 'mx-auto grow px-3 py-4 md:px-4';
+
+if (applyContainerClass) {
+  cssClass += ' container';
+} else {
+  cssClass += ' w-full';
+}
+
+if (providedClas) {
+  cssClass += ` ${providedClas}`;
+}
+---
+
+<main class={cssClass} {...restProps}>
+  <slot />
+</main>
