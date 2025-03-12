@@ -3,6 +3,7 @@ import CircleXIcon from './icons/CircleXIcon.astro';
 import FacebookIcon from './icons/FacebookIcon.astro';
 import FigmaIcon from './icons/FigmaIcon.astro';
 import GithubIcon from './icons/GithubIcon.astro';
+import GitlabIcon from './icons/GitlabIcon.astro';
 import InfoIcon from './icons/InfoIcon.astro';
 import InstagramIcon from './icons/InstagramIcon.astro';
 import LinkedInIcon from './icons/LinkedInIcon.astro';
@@ -17,6 +18,7 @@ export {
   FacebookIcon,
   FigmaIcon,
   GithubIcon,
+  GitlabIcon,
   InfoIcon,
   InstagramIcon,
   LinkedInIcon,
