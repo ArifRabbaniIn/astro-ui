@@ -1,3 +1,4 @@
+import ChromeIcon from './icons/ChromeIcon.astro';
 import CircleCheckIcon from './icons/CircleCheckIcon.astro';
 import CircleXIcon from './icons/CircleXIcon.astro';
 import FacebookIcon from './icons/FacebookIcon.astro';
@@ -13,6 +14,7 @@ import TwitterIcon from './icons/TwitterIcon.astro';
 import YoutubeIcon from './icons/YoutubeIcon.astro';
 
 export {
+  ChromeIcon,
   CircleCheckIcon,
   CircleXIcon,
   FacebookIcon,
