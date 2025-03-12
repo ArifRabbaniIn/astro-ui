@@ -24,6 +24,8 @@ import NoScript from './ui/NoScript.astro';
 import NumberInput from './ui/NumberInput.astro';
 import RadioInput from './ui/RadioInput/RadioInput.astro';
 
+export * from './icon-exports';
+
 export {
   Accordion,
   AccordionContent,
