@@ -1,11 +1,21 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = Omit<HTMLAttributes<'svg'>, 'fill'>;
+type Props = Omit<HTMLAttributes<'svg'>, 'fill'> & {
+  fill?: boolean | undefined;
+};
 
-const DEFAULT_CSS = 'cursor-pointer hover:opacity-75'
+const { fill = false, class: providedClass, ...restProps } = Astro.props;
 
-const props: Props = {
+let cssClass = 'cursor-pointer hover:opacity-75';
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+
+const fillColor: string = fill ? 'currentColor' : 'none';
+
+const props: Omit<Props, 'fill'> = {
   width: 24,
   height: 24,
   viewBox: '0 0 24 24',
@@ -13,11 +23,11 @@ const props: Props = {
   stroke: 'currentColor',
   'stroke-linecap': 'round',
   'stroke-linejoin': 'round',
-  ...Astro.props,
-  class: Astro.props.class ? `${DEFAULT_CSS} ${Astro.props.class}` : DEFAULT_CSS,
+  class: cssClass,
+  ...restProps,
 };
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" role="img" fill="none" {...props}>
+<svg xmlns="http://www.w3.org/2000/svg" role="img" fill={fillColor} {...props}>
   <slot />
 </svg>
