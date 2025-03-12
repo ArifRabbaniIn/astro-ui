@@ -1,17 +1,18 @@
-import ChromeIcon from './components/icons/ChromeIcon.astro';
-import CircleCheckIcon from './components/icons/CircleCheckIcon.astro';
+import ChromeIcon from './components/icons/brand/ChromeIcon.astro';
+import FacebookIcon from './components/icons/brand/FacebookIcon.astro';
+import FigmaIcon from './components/icons/brand/FigmaIcon.astro';
+import GithubIcon from './components/icons/brand/GithubIcon.astro';
+import GitlabIcon from './components/icons/brand/GitlabIcon.astro';
+import InstagramIcon from './components/icons/brand/InstagramIcon.astro';
+import LinkedInIcon from './components/icons/brand/LinkedInIcon.astro';
+import SlackIcon from './components/icons/brand/SlackIcon.astro';
+import TwitterIcon from './components/icons/brand/TwitterIcon.astro';
+import YoutubeIcon from './components/icons/brand/YoutubeIcon.astro';
 import CircleXIcon from './components/icons/CircleXIcon.astro';
-import FacebookIcon from './components/icons/FacebookIcon.astro';
-import FigmaIcon from './components/icons/FigmaIcon.astro';
-import GithubIcon from './components/icons/GithubIcon.astro';
-import GitlabIcon from './components/icons/GitlabIcon.astro';
-import InfoIcon from './components/icons/InfoIcon.astro';
-import InstagramIcon from './components/icons/InstagramIcon.astro';
-import LinkedInIcon from './components/icons/LinkedInIcon.astro';
-import SlackIcon from './components/icons/SlackIcon.astro';
-import TriangleAlertIcon from './components/icons/TriangleAlertIcon.astro';
-import TwitterIcon from './components/icons/TwitterIcon.astro';
-import YoutubeIcon from './components/icons/YoutubeIcon.astro';
+import HeartIcon from './components/icons/HeartIcon.astro';
+import CircleCheckIcon from './components/icons/notification/CircleCheckIcon.astro';
+import InfoIcon from './components/icons/notification/InfoIcon.astro';
+import TriangleAlertIcon from './components/icons/notification/TriangleAlertIcon.astro';
 
 export {
   ChromeIcon,
@@ -21,6 +22,7 @@ export {
   FigmaIcon,
   GithubIcon,
   GitlabIcon,
+  HeartIcon,
   InfoIcon,
   InstagramIcon,
   LinkedInIcon,
