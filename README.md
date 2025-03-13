@@ -27,22 +27,42 @@ import { Button } from '@codemint/astro-ui';
 ## Components
 
 - Accordion
+- Alert
+- Avatar
 - Button
 - Card
 - Checkbox
 - Collapse
+- FooterLinks
 - Input
 - JoinedContainer
 - JoinedItem
 - Link
 - Loading
+- Mask
 - RadioInput
-- NoScript
+- Swap
 - NumberInput
+
+## HTML
+
+- Body
+- Main
+- Footer
+- NoScript
+
+## Utility
+
+- DevelopedBy
+- Mailto
+- Copywright
+
+## Icons
+
+Based on lucid icon
 
 ## Blocks
 
-- Footer
 - NotFound (404)
 
 ### Contributing

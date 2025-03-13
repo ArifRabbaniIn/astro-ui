@@ -1,5 +1,5 @@
-import CopyWright from './components/utility/CopyWright.astro';
+import Copywright from './components/utility/Copywright.astro';
 import DevelopedBy from './components/utility/DevelopedBy.astro';
 import Mailto from './components/utility/Mailto.astro';
 
-export { CopyWright, DevelopedBy, Mailto };
+export { Copywright, DevelopedBy, Mailto };
