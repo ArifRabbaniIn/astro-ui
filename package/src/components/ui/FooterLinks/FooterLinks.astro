@@ -1,0 +1,21 @@
+---
+import type { Direction } from '../../../types/direction';
+
+type Props = {
+  title?: string | undefined;
+  direction?: Direction | undefined;
+};
+
+const { title, direction = 'vertical', ...restProps } = Astro.props;
+---
+
+<nav {...restProps}>
+  {title ? <h6 class="footer-title">{title}</h6> : null}
+  <div
+    class:list={[
+      'flex gap-2 gap-x-6',
+      { 'flex-col': direction === 'vertical' },
+    ]}>
+    <slot />
+  </div>
+</nav>
