@@ -1,5 +1,5 @@
 ---
-import { Body, Footer, Main, NoScript } from '@codemint/astro-ui';
+import { Body, DevelopedBy, Footer, Main, NoScript } from '@codemint/astro-ui';
 import '../styles/global.css';
 ---
 
@@ -17,7 +17,12 @@ import '../styles/global.css';
       <NoScript />
       <slot />
     </Main>
-    <Footer />
+    <Footer>
+      <DevelopedBy
+        authorName="Codemint"
+        authorWebsiteUrl="https://example.com"
+      />
+    </Footer>
     <!-- <Footer
       variant="1"
       authorName="Arif Rabbani"
