@@ -11,16 +11,11 @@ type Props = Omit<
    */
   name: string;
 };
-
-const { class: providedClass, ...restProps }: Props = Astro.props;
-
-let cssClass = 'join-item';
-
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
 ---
 
-<Collapse mode="radio" class={cssClass} {...restProps}>
+<Collapse
+  mode="radio"
+  class:list={['join-item', Astro.props.class]}
+  {...Astro.props}>
   <slot />
 </Collapse>
