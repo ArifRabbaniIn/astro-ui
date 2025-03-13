@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { SwapEffect } from './types';
+
+type Props = HTMLAttributes<'label'> & {
+  effect?: SwapEffect | undefined;
+  state?: 'on' | 'off' | undefined;
+};
+
+const {
+  effect,
+  state = 'off',
+  class: providedClass,
+  ...restProps
+} = Astro.props;
+
+let cssClass = 'swap';
+
+if (effect === 'flip') {
+  cssClass += ' swap-flip';
+} else if (effect === 'rotate') {
+  cssClass += ' swap-rotate';
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<label class={cssClass} {...restProps}>
+  <input type="checkbox" checked={state === 'on'} />
+  <div class="swap-on">
+    <slot name="on" />
+  </div>
+  <div class="swap-off">
+    <slot name="off" />
+  </div>
+</label>
