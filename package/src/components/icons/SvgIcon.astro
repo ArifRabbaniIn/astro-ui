@@ -6,22 +6,7 @@ type Props = Omit<HTMLAttributes<'svg'>, 'fill'> & {
   dimOnHover?: boolean | undefined;
 };
 
-const {
-  fill = false,
-  dimOnHover = true,
-  class: providedClass,
-  ...restProps
-} = Astro.props;
-
-let cssClass = 'cursor-pointer';
-
-if (dimOnHover) {
-  cssClass += ' hover:opacity-75';
-}
-
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
+const { fill = false, dimOnHover = true, ...restProps } = Astro.props;
 
 const fillColor: string = fill ? 'currentColor' : 'none';
 
@@ -33,11 +18,19 @@ const props: Omit<Props, 'fill'> = {
   stroke: 'currentColor',
   'stroke-linecap': 'round',
   'stroke-linejoin': 'round',
-  class: cssClass,
   ...restProps,
 };
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" role="img" fill={fillColor} {...props}>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  class:list={[
+    'cursor-pointer',
+    { 'hover:opacity-75': dimOnHover },
+    Astro.props.class,
+  ]}
+  fill={fillColor}
+  {...props}>
   <slot />
 </svg>
