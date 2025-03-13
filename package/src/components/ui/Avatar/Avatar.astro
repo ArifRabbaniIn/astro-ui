@@ -1,25 +1,49 @@
 ---
+import type { CommonColor } from '../../../types/color';
+import { getBgAndContentColorClass } from '../../../utils/bgAndContentColor';
 import { cn } from '../../../utils/css';
-import type { AvatarStatus } from './types';
+import type { AvatarStatus, AvatarType } from './types';
 import { getAvatarStatusClass } from './utils';
 
 type Props = {
   class?: string | undefined;
   status?: AvatarStatus | undefined;
   rounded?: boolean | undefined;
+  type?: AvatarType | undefined;
+  placeholderColorScheme?: CommonColor | undefined;
 };
 
-const { status, rounded, class: providedClass } = Astro.props;
+const {
+  status,
+  rounded,
+  type = 'image',
+  placeholderColorScheme,
+  class: providedClass,
+} = Astro.props;
 
 let contianerClass = 'avatar';
 
 if (status) {
   contianerClass += ` ${getAvatarStatusClass(status)}`;
 }
+
+let placeholderCssClass = '';
+
+if (type === 'placeholder') {
+  contianerClass += ' avatar-placeholder';
+
+  placeholderCssClass += ` ${getBgAndContentColorClass(placeholderColorScheme ?? 'base-300')}`;
+}
 ---
 
 <div class={contianerClass}>
-  <div class={cn('w-24', { 'rounded-full': rounded }, providedClass)}>
+  <div
+    class={cn(
+      'w-24',
+      { 'rounded-full': rounded },
+      placeholderCssClass,
+      providedClass
+    )}>
     <slot />
   </div>
 </div>
