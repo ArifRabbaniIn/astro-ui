@@ -20,6 +20,7 @@ import JoinedContainer from './components/ui/Joined/JoinedContainer.astro';
 import JoinedItem from './components/ui/Joined/JoinedItem.astro';
 import Link from './components/ui/Link/Link.astro';
 import Loading from './components/ui/Loading/Loading.astro';
+import Mask from './components/ui/Mask/Mask.astro';
 import NumberInput from './components/ui/NumberInput.astro';
 import RadioInput from './components/ui/RadioInput/RadioInput.astro';
 import Swap from './components/ui/Swap/Swap.astro';
@@ -47,6 +48,7 @@ export {
   JoinedItem,
   Link,
   Loading,
+  Mask,
   NumberInput,
   RadioInput,
   Swap,

@@ -1,0 +1,26 @@
+---
+import type { MaskModifier, MaskType } from './types';
+import { getMaskModifierClass, getMaskTypeClass } from './utils';
+
+type Props = {
+  type: MaskType;
+  modifier?: MaskModifier | undefined;
+  class?: string | undefined;
+};
+
+const { type, modifier, class: providedClass } = Astro.props;
+
+let cssClass = `mask ${getMaskTypeClass(type)}`;
+
+if (modifier) {
+  cssClass += ` ${getMaskModifierClass(modifier)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<div class={cssClass}>
+  <slot />
+</div>
