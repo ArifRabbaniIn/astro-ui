@@ -13,6 +13,7 @@ import Checkbox from './components/ui/Checkbox/Checkbox.astro';
 import Collapse from './components/ui/Collapse/Collapse.astro';
 import CollapseContent from './components/ui/Collapse/CollapseContent.astro';
 import CollapseTrigger from './components/ui/Collapse/CollapseTrigger.astro';
+import FooterLinks from './components/ui/FooterLinks/FooterLinks.astro';
 import Input from './components/ui/Input/Input.astro';
 import JoinedContainer from './components/ui/Joined/JoinedContainer.astro';
 import JoinedItem from './components/ui/Joined/JoinedItem.astro';
@@ -37,6 +38,7 @@ export {
   Collapse,
   CollapseContent,
   CollapseTrigger,
+  FooterLinks,
   Input,
   JoinedContainer,
   JoinedItem,
