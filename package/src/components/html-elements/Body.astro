@@ -2,16 +2,10 @@
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'body'>;
-
-const { class: providedClas, ...restProps } = Astro.props;
-
-let cssClass = 'flex h-svh min-h-svh flex-col';
-
-if (providedClas) {
-  cssClass += ` ${providedClas}`;
-}
 ---
 
-<body class={cssClass} {...restProps}>
+<body
+  class:list={['flex h-svh min-h-svh flex-col', Astro.props.class]}
+  {...Astro.props}>
   <slot />
 </body>
