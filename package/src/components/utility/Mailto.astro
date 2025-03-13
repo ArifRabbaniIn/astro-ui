@@ -7,21 +7,14 @@ type Props = ComponentProps<typeof Link> & {
   emailAddress: string;
 };
 
-const {
-  emailAddress,
-  title = 'Email Us',
-  class: providedClass,
-  ...restProps
-} = Astro.props;
-
-let cssClass = 'no-underline';
-
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
+const { emailAddress, title = 'Email Us', ...restProps } = Astro.props;
 ---
 
-<Link href={`mailto:${emailAddress}`} {title} class={cssClass} {...restProps}>
+<Link
+  href={`mailto:${emailAddress}`}
+  {title}
+  class:list={['no-underline', Astro.props.class]}
+  {...restProps}>
   <MailIcon dimOnHover={false} class="inline" />
   <slot>{emailAddress}</slot>
 </Link>
