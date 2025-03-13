@@ -5,12 +5,13 @@ import { cn } from '../../../utils/css';
 type Props = {
   title?: string | undefined;
   direction?: Direction | undefined;
+  class?: string | undefined;
 };
 
-const { title, direction = 'vertical', ...restProps } = Astro.props;
+const { title, direction = 'vertical' } = Astro.props;
 ---
 
-<nav {...restProps}>
+<nav class={Astro.props.class}>
   {title ? <h6 class="footer-title">{title}</h6> : null}
   <div
     class={cn('flex gap-2 gap-x-6', {
