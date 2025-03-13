@@ -8,21 +8,14 @@ type Props = ComponentProps<typeof Link> & {
   authorWebsiteUrl: string;
 };
 
-const {
-  authorName,
-  authorWebsiteUrl,
-  class: providedClass,
-  ...restProps
-} = Astro.props;
-
-let cssClass = 'no-underline';
-
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
+const { authorName, authorWebsiteUrl, ...restProps } = Astro.props;
 ---
 
-<Link target="_blank" href={authorWebsiteUrl} class={cssClass} {...restProps}>
+<Link
+  target="_blank"
+  href={authorWebsiteUrl}
+  class:list={['no-underline', Astro.props.class]}
+  {...restProps}>
   Crafted with <HeartIcon dimOnHover={false} fill class="inline" /> by {
     authorName
   }
