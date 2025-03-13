@@ -1,0 +1,11 @@
+<p>
+  Copyright &copy; <span id="site-copywright-year"></span> - All rights reserved
+</p>
+
+<script>
+  const copyWriteYearElement = document.getElementById('site-copywright-year');
+
+  if (copyWriteYearElement) {
+    copyWriteYearElement.textContent = new Date().getFullYear().toString();
+  }
+</script>

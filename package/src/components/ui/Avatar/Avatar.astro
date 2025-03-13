@@ -1,0 +1,25 @@
+---
+import { cn } from '../../../utils/css';
+import type { AvatarStatus } from './types';
+import { getAvatarStatusClass } from './utils';
+
+type Props = {
+  class?: string | undefined;
+  status?: AvatarStatus | undefined;
+  rounded?: boolean | undefined;
+};
+
+const { status, rounded, class: providedClass } = Astro.props;
+
+let contianerClass = 'avatar';
+
+if (status) {
+  contianerClass += ` ${getAvatarStatusClass(status)}`;
+}
+---
+
+<div class={contianerClass}>
+  <div class={cn('w-24', { 'rounded-full': rounded }, providedClass)}>
+    <slot />
+  </div>
+</div>

@@ -1,6 +1,7 @@
 ---
 import type { ComponentProps } from 'astro/types';
 import Collapse from '../Collapse/Collapse.astro';
+import { cn } from '../../../utils/css';
 
 type Props = Omit<
   ComponentProps<typeof Collapse>,
@@ -11,16 +12,11 @@ type Props = Omit<
    */
   name: string;
 };
-
-const { class: providedClass, ...restProps }: Props = Astro.props;
-
-let cssClass = 'join-item';
-
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
 ---
 
-<Collapse mode="radio" class={cssClass} {...restProps}>
+<Collapse
+  mode="radio"
+  class={cn('join-item', Astro.props.class)}
+  {...Astro.props}>
   <slot />
 </Collapse>

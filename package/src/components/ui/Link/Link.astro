@@ -6,11 +6,13 @@ import { getLinkColorClass } from './utils';
 type Props = HTMLAttributes<'a'> & {
   color?: CommonColor | undefined;
   hoverLink?: boolean | undefined;
+  dimOnHover?: boolean | undefined;
 };
 
 const {
   color,
   hoverLink = false,
+  dimOnHover = true,
   class: providedClass,
   ...restProps
 } = Astro.props;
@@ -23,6 +25,10 @@ if (color) {
 
 if (hoverLink) {
   cssClass += ' link-hover';
+}
+
+if (dimOnHover) {
+  cssClass += ' hover:opacity-75 hover:decoration-[currentColor]/75';
 }
 
 if (providedClass) {
