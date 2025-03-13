@@ -1,11 +1,12 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { cn } from '../../utils/css';
 
 type Props = HTMLAttributes<'footer'>;
 ---
 
 <footer
-  class:list={['footer gap-y-6 p-2 pb-4', Astro.props.class]}
+  class={cn('footer gap-y-6 p-2 pb-4', Astro.props.class)}
   {...Astro.props}>
   <slot />
 </footer>

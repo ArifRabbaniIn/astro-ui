@@ -2,6 +2,7 @@
 import type { ComponentProps } from 'astro/types';
 import HeartIcon from '../icons/HeartIcon.astro';
 import Link from '../ui/Link/Link.astro';
+import { cn } from '../../utils/css';
 
 type Props = ComponentProps<typeof Link> & {
   authorName: string;
@@ -14,7 +15,7 @@ const { authorName, authorWebsiteUrl, ...restProps } = Astro.props;
 <Link
   target="_blank"
   href={authorWebsiteUrl}
-  class:list={['no-underline', Astro.props.class]}
+  class={cn('no-underline block', Astro.props.class)}
   {...restProps}>
   Crafted with <HeartIcon dimOnHover={false} fill class="inline" /> by {
     authorName

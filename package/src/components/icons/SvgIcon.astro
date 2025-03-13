@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { cn } from '../../utils/css';
 
 type Props = Omit<HTMLAttributes<'svg'>, 'fill'> & {
   fill?: boolean | undefined;
@@ -25,11 +26,11 @@ const props: Omit<Props, 'fill'> = {
 <svg
   xmlns="http://www.w3.org/2000/svg"
   role="img"
-  class:list={[
+  class={cn(
     'cursor-pointer',
     { 'hover:opacity-75': dimOnHover },
-    Astro.props.class,
-  ]}
+    Astro.props.class
+  )}
   fill={fillColor}
   {...props}>
   <slot />

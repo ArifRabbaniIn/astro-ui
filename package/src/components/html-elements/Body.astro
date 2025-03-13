@@ -1,11 +1,12 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { cn } from '../../utils/css';
 
 type Props = HTMLAttributes<'body'>;
 ---
 
 <body
-  class:list={['flex h-svh min-h-svh flex-col', Astro.props.class]}
+  class={cn('flex h-svh min-h-svh flex-col', Astro.props.class)}
   {...Astro.props}>
   <slot />
 </body>

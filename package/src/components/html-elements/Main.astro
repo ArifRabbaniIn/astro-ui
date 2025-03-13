@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { cn } from '../../utils/css';
 
 type Props = HTMLAttributes<'main'> & {
   applyContainerClass?: boolean | undefined;
@@ -9,11 +10,11 @@ const { applyContainerClass = true, ...restProps } = Astro.props;
 ---
 
 <main
-  class:list={[
+  class={cn(
     'mx-auto grow px-3 py-4 md:px-4',
     { container: applyContainerClass, 'w-full': !applyContainerClass },
-    Astro.props.class,
-  ]}
+    Astro.props.class
+  )}
   {...restProps}>
   <slot />
 </main>
