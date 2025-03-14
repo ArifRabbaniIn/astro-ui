@@ -1,15 +1,17 @@
 ---
 import type { ComponentProps } from 'astro/types';
-import HeartIcon from '../icons/HeartIcon.astro';
-import Link from '../ui/Link/Link.astro';
 import { cn } from '../../utils/css';
+import HeartIcon from '../icons/HeartIcon.astro';
+import type SvgIcon from '../icons/SvgIcon.astro';
+import Link from '../ui/Link/Link.astro';
 
 type Props = ComponentProps<typeof Link> & {
   authorName: string;
   authorWebsiteUrl: string;
+  iconProps?: ComponentProps<typeof SvgIcon>;
 };
 
-const { authorName, authorWebsiteUrl, ...restProps } = Astro.props;
+const { authorName, authorWebsiteUrl, iconProps, ...restProps } = Astro.props;
 ---
 
 <Link
@@ -17,7 +19,10 @@ const { authorName, authorWebsiteUrl, ...restProps } = Astro.props;
   href={authorWebsiteUrl}
   class={cn('no-underline block', Astro.props.class)}
   {...restProps}>
-  Crafted with <HeartIcon dimOnHover={false} fill class="inline" /> by {
-    authorName
-  }
+  Crafted with <HeartIcon
+    dimOnHover={false}
+    fill
+    class={cn('inline', iconProps?.class)}
+    {...iconProps}
+  /> by {authorName}
 </Link>
