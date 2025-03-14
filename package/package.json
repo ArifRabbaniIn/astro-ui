@@ -1,6 +1,6 @@
 {
   "name": "@codemint/astro-ui",
-  "version": "0.13.2",
+  "version": "0.13.3",
   "description": "AstroJS UI components based on DaisyUI",
   "keywords": [
     "astro",
