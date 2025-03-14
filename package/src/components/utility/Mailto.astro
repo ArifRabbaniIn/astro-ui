@@ -14,8 +14,8 @@ const { emailAddress, title = 'Email Us', ...restProps } = Astro.props;
 <Link
   href={`mailto:${emailAddress}`}
   {title}
-  class={cn('no-underline', Astro.props.class)}
-  {...restProps}>
+  {...restProps}
+  class={cn('no-underline', Astro.props.class)}>
   <MailIcon dimOnHover={false} class="inline" />
   <slot>{emailAddress}</slot>
 </Link>

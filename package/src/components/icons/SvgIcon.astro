@@ -26,12 +26,12 @@ const props: Omit<Props, 'fill'> = {
 <svg
   xmlns="http://www.w3.org/2000/svg"
   role="img"
+  fill={fillColor}
+  {...props}
   class={cn(
     'cursor-pointer',
     { 'hover:opacity-75': dimOnHover },
     Astro.props.class
-  )}
-  fill={fillColor}
-  {...props}>
+  )}>
   <slot />
 </svg>

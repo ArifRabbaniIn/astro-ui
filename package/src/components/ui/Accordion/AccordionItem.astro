@@ -16,7 +16,7 @@ type Props = Omit<
 
 <Collapse
   mode="radio"
-  class={cn('join-item', Astro.props.class)}
-  {...Astro.props}>
+  {...Astro.props}
+  class={cn('join-item', Astro.props.class)}>
   <slot />
 </Collapse>
