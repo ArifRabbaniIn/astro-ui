@@ -11,7 +11,12 @@ type Props = ComponentProps<typeof Link> & {
   iconProps?: ComponentProps<typeof SvgIcon>;
 };
 
-const { authorName, authorWebsiteUrl, iconProps, ...restProps } = Astro.props;
+const {
+  authorName,
+  authorWebsiteUrl,
+  iconProps = {},
+  ...restProps
+} = Astro.props;
 ---
 
 <Link
@@ -22,7 +27,7 @@ const { authorName, authorWebsiteUrl, iconProps, ...restProps } = Astro.props;
   Crafted with <HeartIcon
     dimOnHover={false}
     fill
-    class={cn('inline', iconProps?.class)}
     {...iconProps}
+    class={cn('inline', iconProps.class)}
   /> by {authorName}
 </Link>
