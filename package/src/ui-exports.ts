@@ -18,6 +18,7 @@ import FooterLinks from './components/ui/FooterLinks/FooterLinks.astro';
 import Input from './components/ui/Input/Input.astro';
 import JoinedContainer from './components/ui/Joined/JoinedContainer.astro';
 import JoinedItem from './components/ui/Joined/JoinedItem.astro';
+import LabelledInput from './components/ui/LabelledInput/LabelledInput.astro';
 import Link from './components/ui/Link/Link.astro';
 import Loading from './components/ui/Loading/Loading.astro';
 import Mask from './components/ui/Mask/Mask.astro';
@@ -46,6 +47,7 @@ export {
   Input,
   JoinedContainer,
   JoinedItem,
+  LabelledInput,
   Link,
   Loading,
   Mask,

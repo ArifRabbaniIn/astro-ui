@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'label'> & {
+  labelStartClass?: string | undefined;
+  labelEndClass?: string | undefined;
+};
+
+const props: Props = {
+  ...Astro.props,
+  class: `input validator focus:outline-none focus-visible:outline-none focus-within:outline-0 [&_input]:px-0 ${Astro.props.class ?? ''}`,
+};
+---
+
+<label {...props}>
+  {
+    Astro.slots.has('labelStart') && (
+      <span class:list={['label first:mr-0!', props.labelStartClass]}>
+        <slot name="labelStart" />
+      </span>
+    )
+  }
+
+  <slot />
+
+  {
+    Astro.slots.has('labelEnd') && (
+      <span class:list={['label last:ml-0!', props.labelEndClass]}>
+        <slot name="labelEnd" />
+      </span>
+    )
+  }
+</label>
