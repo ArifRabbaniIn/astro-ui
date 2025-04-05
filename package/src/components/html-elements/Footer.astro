@@ -6,7 +6,7 @@ type Props = HTMLAttributes<'footer'>;
 ---
 
 <footer
-  class={cn('footer gap-y-6 px-3 py-4 md:px-4', Astro.props.class)}
-  {...Astro.props}>
+  {...Astro.props}
+  class={cn('footer gap-y-6 px-3 py-4 md:px-4', Astro.props.class)}>
   <slot />
 </footer>

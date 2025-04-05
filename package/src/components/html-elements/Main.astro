@@ -10,11 +10,11 @@ const { applyContainerClass = true, ...restProps } = Astro.props;
 ---
 
 <main
+  {...restProps}
   class={cn(
     'mx-auto grow px-3 py-4 md:px-4',
     { container: applyContainerClass, 'w-full': !applyContainerClass },
     Astro.props.class
-  )}
-  {...restProps}>
+  )}>
   <slot />
 </main>

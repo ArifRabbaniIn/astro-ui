@@ -6,7 +6,7 @@ type Props = HTMLAttributes<'body'>;
 ---
 
 <body
-  class={cn('flex h-full min-h-svh flex-col', Astro.props.class)}
-  {...Astro.props}>
+  {...Astro.props}
+  class={cn('flex h-full min-h-svh flex-col', Astro.props.class)}>
   <slot />
 </body>
