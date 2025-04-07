@@ -71,9 +71,9 @@ let cssClass = 'collapse';
 
 if (color) {
   cssClass += ` ${getBgAndContentColorClass(color)}`;
-} else {
-  cssClass += ` border ${getBorderColorClass(borderColor ?? 'base-300')}`;
 }
+
+cssClass += ` border ${getBorderColorClass(borderColor ?? 'base-300')}`;
 
 if (focusColor) {
   cssClass += ` focus:border-0 ${getBgAndContentColorClassForFocus(focusColor)}`;
