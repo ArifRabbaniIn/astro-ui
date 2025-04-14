@@ -1,0 +1,29 @@
+---
+import Alert from '../Alert/Alert.astro';
+import type { ToastPosition, ToastType } from './types';
+import { getToastPositionClass } from './utils';
+
+type Props = {
+  type?: ToastType | undefined;
+  position?: ToastPosition | undefined;
+  class?: string | undefined;
+};
+
+const {
+  type = 'info',
+  position = 'bottom-right',
+  class: providedClass,
+} = Astro.props;
+
+let cssClass = `toast ${getToastPositionClass(position)}`;
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<div class={cssClass}>
+  <Alert {type}>
+    <slot />
+  </Alert>
+</div>

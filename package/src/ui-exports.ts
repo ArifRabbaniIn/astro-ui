@@ -25,6 +25,7 @@ import Mask from './components/ui/Mask/Mask.astro';
 import NumberInput from './components/ui/NumberInput.astro';
 import RadioInput from './components/ui/RadioInput/RadioInput.astro';
 import Swap from './components/ui/Swap/Swap.astro';
+import Toast from './components/ui/Toast/Toast.astro';
 
 export {
   Accordion,
@@ -54,4 +55,5 @@ export {
   NumberInput,
   RadioInput,
   Swap,
+  Toast,
 };
