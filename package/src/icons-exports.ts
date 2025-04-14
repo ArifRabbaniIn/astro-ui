@@ -9,6 +9,7 @@ import SlackIcon from './components/icons/brand/SlackIcon.astro';
 import TwitterIcon from './components/icons/brand/TwitterIcon.astro';
 import YoutubeIcon from './components/icons/brand/YoutubeIcon.astro';
 import CircleXIcon from './components/icons/CircleXIcon.astro';
+import CopyIcon from './components/icons/CopyIcon.astro';
 import HeartIcon from './components/icons/HeartIcon.astro';
 import MailIcon from './components/icons/mail/MailIcon.astro';
 import CircleCheckIcon from './components/icons/notification/CircleCheckIcon.astro';
@@ -19,6 +20,7 @@ export {
   ChromeIcon,
   CircleCheckIcon,
   CircleXIcon,
+  CopyIcon,
   FacebookIcon,
   FigmaIcon,
   GithubIcon,
