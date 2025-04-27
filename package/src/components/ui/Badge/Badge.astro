@@ -1,0 +1,48 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { CommonColor } from '../../../types/color';
+import type { Size } from '../../../types/size';
+import type { BadgeStyle } from './types';
+import {
+  getBadgeColorClass,
+  getBadgeSizeClass,
+  getBadgeStyleClass,
+} from './utils';
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+  color?: CommonColor | undefined;
+  badgeStyle?: BadgeStyle | undefined;
+  size?: Size | undefined;
+};
+
+const {
+  as: Tag = 'div',
+  class: providedClass,
+  color,
+  size,
+  badgeStyle,
+  ...restProps
+} = Astro.props;
+
+let cssClass = 'badge';
+
+if (color) {
+  cssClass += ` ${getBadgeColorClass(color)}`;
+}
+
+if (size) {
+  cssClass += ` ${getBadgeSizeClass(size)}`;
+}
+
+if (badgeStyle) {
+  cssClass += ` ${getBadgeStyleClass(badgeStyle)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<Tag class={cssClass} {...restProps}>
+  <slot />
+</Tag>

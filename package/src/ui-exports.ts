@@ -4,6 +4,7 @@ import AccordionItem from './components/ui/Accordion/AccordionItem.astro';
 import AccordionTrigger from './components/ui/Accordion/AccordionTrigger.astro';
 import Alert from './components/ui/Alert/Alert.astro';
 import Avatar from './components/ui/Avatar/Avatar.astro';
+import Badge from './components/ui/Badge/Badge.astro';
 import Button from './components/ui/Button/Button.astro';
 import Card from './components/ui/Card/Card.astro';
 import CardActions from './components/ui/Card/CardActions.astro';
@@ -34,6 +35,7 @@ export {
   AccordionTrigger,
   Alert,
   Avatar,
+  Badge,
   Button,
   Card,
   CardActions,
