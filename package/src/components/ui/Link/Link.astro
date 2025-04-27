@@ -7,12 +7,14 @@ type Props = HTMLAttributes<'a'> & {
   color?: CommonColor | undefined;
   hoverLink?: boolean | undefined;
   dimOnHover?: boolean | undefined;
+  inline?: boolean | undefined;
 };
 
 const {
   color,
   hoverLink = false,
   dimOnHover = true,
+  inline = false,
   class: providedClass,
   ...restProps
 } = Astro.props;
@@ -29,6 +31,10 @@ if (hoverLink) {
 
 if (dimOnHover) {
   cssClass += ' hover:opacity-75 hover:decoration-[currentColor]/75';
+}
+
+if (inline) {
+  cssClass += ' inline-block';
 }
 
 if (providedClass) {
