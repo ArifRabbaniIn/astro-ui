@@ -29,6 +29,7 @@ import { Button } from '@codemint/astro-ui';
 - Accordion
 - Alert
 - Avatar
+- Badge
 - Button
 - Card
 - Checkbox
@@ -37,33 +38,35 @@ import { Button } from '@codemint/astro-ui';
 - Input
 - JoinedContainer
 - JoinedItem
+- LabelledInput
 - Link
 - Loading
 - Mask
 - RadioInput
 - Swap
+- Toast
 - NumberInput
 
 ## HTML
 
 - Body
-- Main
 - Footer
+- Main
 - NoScript
 
 ## Utility
 
+- Copywright
 - DevelopedBy
 - Mailto
-- Copywright
-
-## Icons
-
-Based on lucid icon
 
 ## Blocks
 
 - NotFound (404)
+
+## Icons
+
+Based on lucid icon
 
 ### Contributing
 
