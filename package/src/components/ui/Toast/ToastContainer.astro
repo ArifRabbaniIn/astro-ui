@@ -1,0 +1,20 @@
+---
+import { TOAST_CONTAINER_ID } from './data';
+import type { ToastPosition } from './types';
+import { getToastPositionClass } from './utils';
+
+type Props = {
+  position?: ToastPosition | undefined;
+  class?: string | undefined;
+};
+
+const { position = 'bottom-right', class: providedClass } = Astro.props;
+
+let cssClass = `toast ${getToastPositionClass(position)}`;
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<div id={TOAST_CONTAINER_ID} class={cssClass}></div>

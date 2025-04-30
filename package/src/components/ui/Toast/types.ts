@@ -1,7 +1,3 @@
-import type { AlertColor } from '../Alert/types';
-
-export type ToastType = AlertColor;
-
 export type ToastPosition =
   | 'top-left'
   | 'top-center'

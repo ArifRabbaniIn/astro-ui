@@ -1,18 +1,9 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import type { Direction } from '../../../types/direction';
-import type { AlertColor, AlertStyle } from './types';
-import {
-  getAlertColorClass,
-  getAlertDirectionClass,
-  getAlertStyleClass,
-} from './utils';
+import type { AlertProps } from './types';
+import { getAlertClass } from './utils';
 
-type Props = HTMLAttributes<'div'> & {
-  type?: AlertColor | undefined;
-  alertStyle?: AlertStyle | undefined;
-  direction?: Direction | undefined;
-};
+type Props = HTMLAttributes<'div'> & AlertProps;
 
 const {
   type,
@@ -22,23 +13,7 @@ const {
   ...restProps
 } = Astro.props;
 
-let cssClass = 'alert';
-
-if (type) {
-  cssClass += ` ${getAlertColorClass(type)}`;
-}
-
-if (alertStyle) {
-  cssClass += ` ${getAlertStyleClass(alertStyle)}`;
-}
-
-if (direction) {
-  cssClass += ` ${getAlertDirectionClass(direction)}`;
-}
-
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
+const cssClass = getAlertClass(type, alertStyle, direction, providedClass);
 ---
 
 <div role="alert" class={cssClass} {...restProps}>
