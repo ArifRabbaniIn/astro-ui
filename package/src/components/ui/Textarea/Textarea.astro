@@ -1,0 +1,56 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { CommonColor } from '../../../types/color';
+import type { Size } from '../../../types/size';
+import { getTextareaColorClass, getTextareaSizeClass } from './utils';
+
+/**
+ * Props for the Textarea component.
+ */
+type Props = HTMLAttributes<'textarea'> & {
+  /**
+   * The color scheme of the textarea.
+   */
+  color?: CommonColor | undefined;
+
+  /**
+   * The size of the textarea.
+   */
+  textareaSize?: Size | undefined;
+
+  /**
+   * Whether the textarea should have a ghost appearance.
+   * @default false
+   */
+  ghost?: boolean | undefined;
+};
+
+const {
+  color,
+  textareaSize,
+  ghost,
+  class: providedClass,
+  ...restProps
+} = Astro.props;
+
+let cssClass =
+  'textarea validator focus:outline-none focus-visible:outline-none focus-within:outline-0';
+
+if (color) {
+  cssClass += ` ${getTextareaColorClass(color)}`;
+}
+
+if (textareaSize) {
+  cssClass += ` ${getTextareaSizeClass(textareaSize)}`;
+}
+
+if (ghost) {
+  cssClass += ` textarea-ghost`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<textarea class={cssClass} {...restProps}></textarea>
