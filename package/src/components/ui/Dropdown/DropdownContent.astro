@@ -1,0 +1,25 @@
+---
+import type { Color } from '../../../types/color';
+import { getBgAndContentColorClass } from '../../../utils/bgAndContentColor';
+
+type Props = {
+  class?: string | undefined;
+  color?: Color | undefined;
+};
+
+const { class: providedClass, color = 'base-100' }: Props = Astro.props;
+
+let cssClass = 'dropdown-content z-1';
+
+if (color) {
+  cssClass += ` ${getBgAndContentColorClass(color)}`;
+}
+
+if (providedClass) {
+  cssClass += ` ${providedClass}`;
+}
+---
+
+<div tabindex="0" class={cssClass}>
+  <slot />
+</div>

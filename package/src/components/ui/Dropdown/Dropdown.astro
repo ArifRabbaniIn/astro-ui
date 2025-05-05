@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import type { DropdownPosition } from './types';
+import { getDropdownClass } from './utils';
+
+type Props = HTMLAttributes<'div'> & {
+  forceOpen?: boolean | undefined;
+  hoverOpen?: boolean | undefined;
+  dropdownPosition?: DropdownPosition | undefined;
+};
+
+const {
+  forceOpen = false,
+  hoverOpen = false,
+  dropdownPosition = 'bottom-end',
+  class: providedClass,
+  ...restProps
+}: Props = Astro.props;
+
+const cssClass = getDropdownClass(
+  forceOpen,
+  hoverOpen,
+  dropdownPosition,
+  providedClass
+);
+---
+
+<div class={cssClass} {...restProps}>
+  <slot />
+</div>

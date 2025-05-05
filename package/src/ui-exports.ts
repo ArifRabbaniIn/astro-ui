@@ -15,6 +15,9 @@ import Checkbox from './components/ui/Checkbox/Checkbox.astro';
 import Collapse from './components/ui/Collapse/Collapse.astro';
 import CollapseContent from './components/ui/Collapse/CollapseContent.astro';
 import CollapseTrigger from './components/ui/Collapse/CollapseTrigger.astro';
+import Dropdown from './components/ui/Dropdown/Dropdown.astro';
+import DropdownContent from './components/ui/Dropdown/DropdownContent.astro';
+import DropdownTrigger from './components/ui/Dropdown/DropdownTrigger.astro';
 import FooterLinks from './components/ui/FooterLinks/FooterLinks.astro';
 import Input from './components/ui/Input/Input.astro';
 import JoinedContainer from './components/ui/Joined/JoinedContainer.astro';
@@ -47,6 +50,9 @@ export {
   Collapse,
   CollapseContent,
   CollapseTrigger,
+  Dropdown,
+  DropdownContent,
+  DropdownTrigger,
   FooterLinks,
   Input,
   JoinedContainer,

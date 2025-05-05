@@ -1,0 +1,30 @@
+---
+import type { ComponentProps } from 'astro/types';
+import type Button from '../Button/Button.astro';
+import { getButtonClass } from '../Button/utils';
+
+type Props = Omit<ComponentProps<typeof Button>, 'type'>;
+
+const {
+  color,
+  size,
+  buttonStyle = 'ghost',
+  modifier,
+  active = false,
+  class: providedClass,
+  ...restProps
+}: Props = Astro.props;
+
+const cssClass = getButtonClass(
+  color,
+  size,
+  buttonStyle,
+  modifier,
+  active,
+  providedClass
+);
+---
+
+<div tabindex="0" role="button" class={cssClass} {...restProps}>
+  <slot />
+</div>
