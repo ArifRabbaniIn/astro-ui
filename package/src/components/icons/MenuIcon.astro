@@ -1,0 +1,12 @@
+---
+import type { ComponentProps } from 'astro/types';
+import SvgIcon from './SvgIcon.astro';
+
+type Props = ComponentProps<typeof SvgIcon>;
+---
+
+<SvgIcon {...Astro.props}>
+  <path d="M4 12h16"></path>
+  <path d="M4 18h16"></path>
+  <path d="M4 6h16"></path>
+</SvgIcon>

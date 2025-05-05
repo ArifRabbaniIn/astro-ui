@@ -12,6 +12,7 @@ import CircleXIcon from './components/icons/CircleXIcon.astro';
 import CopyIcon from './components/icons/CopyIcon.astro';
 import HeartIcon from './components/icons/HeartIcon.astro';
 import MailIcon from './components/icons/mail/MailIcon.astro';
+import MenuIcon from './components/icons/MenuIcon.astro';
 import CircleCheckIcon from './components/icons/notification/CircleCheckIcon.astro';
 import InfoIcon from './components/icons/notification/InfoIcon.astro';
 import TriangleAlertIcon from './components/icons/notification/TriangleAlertIcon.astro';
@@ -30,6 +31,7 @@ export {
   InstagramIcon,
   LinkedInIcon,
   MailIcon,
+  MenuIcon,
   SlackIcon,
   TriangleAlertIcon,
   TwitterIcon,
