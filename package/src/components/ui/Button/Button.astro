@@ -3,12 +3,7 @@ import type { HTMLAttributes } from 'astro/types';
 import type { CommonColor } from '../../../types/color';
 import type { Size } from '../../../types/size';
 import type { ButtonModifier, ButtonStyle } from './types';
-import {
-  getButtonColorClass,
-  getButtonModifierClass,
-  getButtonSizeClass,
-  getButtonStyleClass,
-} from './utils';
+import { getButtonClass } from './utils';
 
 type Props = HTMLAttributes<'button'> & {
   color?: CommonColor | undefined;
@@ -29,31 +24,14 @@ const {
   ...restProps
 } = Astro.props;
 
-let cssClass = 'btn';
-
-if (color) {
-  cssClass += ` ${getButtonColorClass(color)}`;
-}
-
-if (size) {
-  cssClass += ` ${getButtonSizeClass(size)}`;
-}
-
-if (buttonStyle) {
-  cssClass += ` ${getButtonStyleClass(buttonStyle)}`;
-}
-
-if (modifier) {
-  cssClass += ` ${getButtonModifierClass(modifier)}`;
-}
-
-if (active) {
-  cssClass += ' btn-active';
-}
-
-if (providedClass) {
-  cssClass += ` ${providedClass}`;
-}
+const cssClass = getButtonClass(
+  color,
+  size,
+  buttonStyle,
+  modifier,
+  active,
+  providedClass
+);
 ---
 
 <button class={cssClass} {type} {...restProps}>
