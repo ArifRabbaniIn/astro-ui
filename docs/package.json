@@ -15,7 +15,7 @@
     "astro": "^5.1.5",
     "sharp": "^0.32.5",
     "starlight-typedoc": "^0.20.0",
-    "typedoc": "^0.27.9",
+    "typedoc": "^0.28.0",
     "typedoc-plugin-markdown": "^4.4.2"
   },
   "devDependencies": {
