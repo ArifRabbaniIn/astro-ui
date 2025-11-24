@@ -12,7 +12,7 @@
   "dependencies": {
     "@codemint/astro-ui": "*",
     "@tailwindcss/vite": "^4.0.9",
-    "astro": "^5.3.1",
+    "astro": "^5.15.9",
     "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
